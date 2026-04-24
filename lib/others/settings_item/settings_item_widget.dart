@@ -1,10 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'settings_item_model.dart';
 export 'settings_item_model.dart';
 
@@ -15,7 +12,7 @@ class SettingsItemWidget extends StatefulWidget {
     Color? icon_bg,
     String? subtitle,
     String? title,
-  })  : this.icon_bg = icon_bg ?? FlutterFlowTheme.of(context).primary20,
+  })  : this.icon_bg = icon_bg ?? const Color(0xFF337C4D),
         this.subtitle = subtitle ?? 'Name, email, and phone number',
         this.title = title ?? 'Personal Information';
 
@@ -81,7 +78,7 @@ class _SettingsItemWidgetState extends State<SettingsItemWidget> {
                     decoration: BoxDecoration(
                       color: valueOrDefault<Color>(
                         widget.icon_bg,
-                        FlutterFlowTheme.of(context).primary20,
+                        Color(0xFF337C4D),
                       ),
                       borderRadius: BorderRadius.circular(12.0),
                       shape: BoxShape.rectangle,

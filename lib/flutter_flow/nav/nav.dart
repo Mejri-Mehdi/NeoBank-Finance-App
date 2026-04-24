@@ -33,12 +33,48 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => ProfileSecurityWidget(),
+      errorBuilder: (context, state) => BASEDigitalCardsWalletWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => ProfileSecurityWidget(),
+          builder: (context, _) => BASEDigitalCardsWalletWidget(),
+        ),
+        FFRoute(
+          name: NewpageWidget.routeName,
+          path: NewpageWidget.routePath,
+          builder: (context, params) => NewpageWidget(),
+        ),
+        FFRoute(
+          name: BASEDigitalCardsWalletWidget.routeName,
+          path: BASEDigitalCardsWalletWidget.routePath,
+          builder: (context, params) => BASEDigitalCardsWalletWidget(),
+        ),
+        FFRoute(
+          name: GESTIONCARTESCardDetailsOverviewWidget.routeName,
+          path: GESTIONCARTESCardDetailsOverviewWidget.routePath,
+          builder: (context, params) =>
+              GESTIONCARTESCardDetailsOverviewWidget(),
+        ),
+        FFRoute(
+          name: GESTIONCARTESAddNewCardWidget.routeName,
+          path: GESTIONCARTESAddNewCardWidget.routePath,
+          builder: (context, params) => GESTIONCARTESAddNewCardWidget(),
+        ),
+        FFRoute(
+          name: BASEBudgetManagementWidget.routeName,
+          path: BASEBudgetManagementWidget.routePath,
+          builder: (context, params) => BASEBudgetManagementWidget(),
+        ),
+        FFRoute(
+          name: GESTIONBUDGETSetNewBudgetWidget.routeName,
+          path: GESTIONBUDGETSetNewBudgetWidget.routePath,
+          builder: (context, params) => GESTIONBUDGETSetNewBudgetWidget(),
+        ),
+        FFRoute(
+          name: GESTIONBUDGETBudgetDetailsWidget.routeName,
+          path: GESTIONBUDGETBudgetDetailsWidget.routePath,
+          builder: (context, params) => GESTIONBUDGETBudgetDetailsWidget(),
         ),
         FFRoute(
           name: BASESplitExpensesGroupsWidget.routeName,
@@ -61,55 +97,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => GESTIONGROUPESGroupDetailsWidget(),
         ),
         FFRoute(
-          name: BASEGlobalWalletDashboardWidget.routeName,
-          path: BASEGlobalWalletDashboardWidget.routePath,
-          builder: (context, params) => BASEGlobalWalletDashboardWidget(),
-        ),
-        FFRoute(
-          name: GESTIONWALLETTransactionHistoryWidget.routeName,
-          path: GESTIONWALLETTransactionHistoryWidget.routePath,
-          builder: (context, params) => GESTIONWALLETTransactionHistoryWidget(),
-        ),
-        FFRoute(
-          name: GESTIONWALLETAddTransactionWidget.routeName,
-          path: GESTIONWALLETAddTransactionWidget.routePath,
-          builder: (context, params) => GESTIONWALLETAddTransactionWidget(),
-        ),
-        FFRoute(
-          name: BASEBudgetManagementWidget.routeName,
-          path: BASEBudgetManagementWidget.routePath,
-          builder: (context, params) => BASEBudgetManagementWidget(),
-        ),
-        FFRoute(
-          name: GESTIONBUDGETBudgetDetailsWidget.routeName,
-          path: GESTIONBUDGETBudgetDetailsWidget.routePath,
-          builder: (context, params) => GESTIONBUDGETBudgetDetailsWidget(),
-        ),
-        FFRoute(
-          name: GESTIONBUDGETSetNewBudgetWidget.routeName,
-          path: GESTIONBUDGETSetNewBudgetWidget.routePath,
-          builder: (context, params) => GESTIONBUDGETSetNewBudgetWidget(),
-        ),
-        FFRoute(
-          name: BASEDigitalCardsWalletWidget.routeName,
-          path: BASEDigitalCardsWalletWidget.routePath,
-          builder: (context, params) => BASEDigitalCardsWalletWidget(),
-        ),
-        FFRoute(
-          name: GESTIONCARTESAddNewCardWidget.routeName,
-          path: GESTIONCARTESAddNewCardWidget.routePath,
-          builder: (context, params) => GESTIONCARTESAddNewCardWidget(),
-        ),
-        FFRoute(
-          name: GESTIONCARTESCardDetailsOverviewWidget.routeName,
-          path: GESTIONCARTESCardDetailsOverviewWidget.routePath,
-          builder: (context, params) =>
-              GESTIONCARTESCardDetailsOverviewWidget(),
-        ),
-        FFRoute(
-          name: BASEInvestmentsSavingsGoalsWidget.routeName,
-          path: BASEInvestmentsSavingsGoalsWidget.routePath,
-          builder: (context, params) => BASEInvestmentsSavingsGoalsWidget(),
+          name: GESTIONINVESTGoalDetailsWidget.routeName,
+          path: GESTIONINVESTGoalDetailsWidget.routePath,
+          builder: (context, params) => GESTIONINVESTGoalDetailsWidget(),
         ),
         FFRoute(
           name: GESTIONINVESTSetNewGoalWidget.routeName,
@@ -117,9 +107,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => GESTIONINVESTSetNewGoalWidget(),
         ),
         FFRoute(
-          name: GESTIONINVESTGoalDetailsWidget.routeName,
-          path: GESTIONINVESTGoalDetailsWidget.routePath,
-          builder: (context, params) => GESTIONINVESTGoalDetailsWidget(),
+          name: BASEInvestmentsSavingsGoalsWidget.routeName,
+          path: BASEInvestmentsSavingsGoalsWidget.routePath,
+          builder: (context, params) => BASEInvestmentsSavingsGoalsWidget(),
         ),
         FFRoute(
           name: TransactionHistoryWidget.routeName,
@@ -132,14 +122,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ProfileSecurityWidget(),
         ),
         FFRoute(
-          name: EntryPageWidget.routeName,
-          path: EntryPageWidget.routePath,
-          builder: (context, params) => EntryPageWidget(),
+          name: GESTIONWALLETTransactionHistoryWidget.routeName,
+          path: GESTIONWALLETTransactionHistoryWidget.routePath,
+          builder: (context, params) => GESTIONWALLETTransactionHistoryWidget(),
         ),
         FFRoute(
-          name: NewpageWidget.routeName,
-          path: NewpageWidget.routePath,
-          builder: (context, params) => NewpageWidget(),
+          name: GESTIONWALLETAddTransactionWidget.routeName,
+          path: GESTIONWALLETAddTransactionWidget.routePath,
+          builder: (context, params) => GESTIONWALLETAddTransactionWidget(),
+        ),
+        FFRoute(
+          name: BASEGlobalWalletDashboardWidget.routeName,
+          path: BASEGlobalWalletDashboardWidget.routePath,
+          builder: (context, params) => BASEGlobalWalletDashboardWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
