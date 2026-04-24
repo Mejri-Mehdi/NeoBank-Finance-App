@@ -1,0 +1,39 @@
+// Export pages
+export '/gestiongroup/b_a_s_e_split_expenses_groups/b_a_s_e_split_expenses_groups_widget.dart'
+    show BASESplitExpensesGroupsWidget;
+export '/gestiongroup/g_e_s_t_i_o_n_g_r_o_u_p_e_s_create_group/g_e_s_t_i_o_n_g_r_o_u_p_e_s_create_group_widget.dart'
+    show GESTIONGROUPESCreateGroupWidget;
+export '/gestiongroup/g_e_s_t_i_o_n_g_r_o_u_p_e_s_add_expense/g_e_s_t_i_o_n_g_r_o_u_p_e_s_add_expense_widget.dart'
+    show GESTIONGROUPESAddExpenseWidget;
+export '/gestiongroup/g_e_s_t_i_o_n_g_r_o_u_p_e_s_group_details/g_e_s_t_i_o_n_g_r_o_u_p_e_s_group_details_widget.dart'
+    show GESTIONGROUPESGroupDetailsWidget;
+export '/gestionwallet/b_a_s_e_global_wallet_dashboard/b_a_s_e_global_wallet_dashboard_widget.dart'
+    show BASEGlobalWalletDashboardWidget;
+export '/gestionwallet/g_e_s_t_i_o_n_w_a_l_l_e_t_transaction_history/g_e_s_t_i_o_n_w_a_l_l_e_t_transaction_history_widget.dart'
+    show GESTIONWALLETTransactionHistoryWidget;
+export '/gestionwallet/g_e_s_t_i_o_n_w_a_l_l_e_t_add_transaction/g_e_s_t_i_o_n_w_a_l_l_e_t_add_transaction_widget.dart'
+    show GESTIONWALLETAddTransactionWidget;
+export '/gestionbudget/b_a_s_e_budget_management/b_a_s_e_budget_management_widget.dart'
+    show BASEBudgetManagementWidget;
+export '/gestionbudget/g_e_s_t_i_o_n_b_u_d_g_e_t_budget_details/g_e_s_t_i_o_n_b_u_d_g_e_t_budget_details_widget.dart'
+    show GESTIONBUDGETBudgetDetailsWidget;
+export '/gestionbudget/g_e_s_t_i_o_n_b_u_d_g_e_t_set_new_budget/g_e_s_t_i_o_n_b_u_d_g_e_t_set_new_budget_widget.dart'
+    show GESTIONBUDGETSetNewBudgetWidget;
+export '/gestioncartes/b_a_s_e_digital_cards_wallet/b_a_s_e_digital_cards_wallet_widget.dart'
+    show BASEDigitalCardsWalletWidget;
+export '/gestioncartes/g_e_s_t_i_o_n_c_a_r_t_e_s_add_new_card/g_e_s_t_i_o_n_c_a_r_t_e_s_add_new_card_widget.dart'
+    show GESTIONCARTESAddNewCardWidget;
+export '/gestioncartes/g_e_s_t_i_o_n_c_a_r_t_e_s_card_details_overview/g_e_s_t_i_o_n_c_a_r_t_e_s_card_details_overview_widget.dart'
+    show GESTIONCARTESCardDetailsOverviewWidget;
+export '/gestioninvestissement/b_a_s_e_investments_savings_goals/b_a_s_e_investments_savings_goals_widget.dart'
+    show BASEInvestmentsSavingsGoalsWidget;
+export '/gestioninvestissement/g_e_s_t_i_o_n_i_n_v_e_s_t_set_new_goal/g_e_s_t_i_o_n_i_n_v_e_s_t_set_new_goal_widget.dart'
+    show GESTIONINVESTSetNewGoalWidget;
+export '/gestioninvestissement/g_e_s_t_i_o_n_i_n_v_e_s_t_goal_details/g_e_s_t_i_o_n_i_n_v_e_s_t_goal_details_widget.dart'
+    show GESTIONINVESTGoalDetailsWidget;
+export '/others/transaction_history/transaction_history_widget.dart'
+    show TransactionHistoryWidget;
+export '/others/profile_security/profile_security_widget.dart'
+    show ProfileSecurityWidget;
+export '/others/entry_page/entry_page_widget.dart' show EntryPageWidget;
+export '/newpage/newpage_widget.dart' show NewpageWidget;
