@@ -25,12 +25,6 @@ export '/gestion_invest/g_e_s_t_i_o_n_i_n_v_e_s_t_goal_details/g_e_s_t_i_o_n_i_n
     show GESTIONINVESTGoalDetailsWidget;
 export '/gestion_invest/g_e_s_t_i_o_n_i_n_v_e_s_t_set_new_goal/g_e_s_t_i_o_n_i_n_v_e_s_t_set_new_goal_widget.dart'
     show GESTIONINVESTSetNewGoalWidget;
-export '/gestion_cartes/b_a_s_e_digital_cards_wallet/b_a_s_e_digital_cards_wallet_widget.dart'
-    show BASEDigitalCardsWalletWidget;
-export '/gestion_cartes/g_e_s_t_i_o_n_c_a_r_t_e_s_add_new_card/g_e_s_t_i_o_n_c_a_r_t_e_s_add_new_card_widget.dart'
-    show GESTIONCARTESAddNewCardWidget;
-export '/gestion_cartes/g_e_s_t_i_o_n_c_a_r_t_e_s_card_details_overview/g_e_s_t_i_o_n_c_a_r_t_e_s_card_details_overview_widget.dart'
-    show GESTIONCARTESCardDetailsOverviewWidget;
 export '/others/profile_security/profile_security_widget.dart'
     show ProfileSecurityWidget;
 export '/others/transaction_history/transaction_history_widget.dart'
@@ -49,3 +43,9 @@ export '/authentication/b_a_s_e_notifications_center/b_a_s_e_notifications_cente
     show BASENotificationsCenterWidget;
 export '/authentication/b_a_s_e_general_settings/b_a_s_e_general_settings_widget.dart'
     show BASEGeneralSettingsWidget;
+export '/gestion_cartes/the_main_mes_cartes_dashboard_view_cards_transactions/the_main_mes_cartes_dashboard_view_cards_transactions_widget.dart'
+    show TheMainMesCartesDashboardViewCardsTransactionsWidget;
+export '/gestion_cartes/ajouterune_carte_form_createa_new_card/ajouterune_carte_form_createa_new_card_widget.dart'
+    show AjouteruneCarteFormCreateaNewCardWidget;
+export '/gestion_cartes/paramtresdela_carte_update_card_limits_status/paramtresdela_carte_update_card_limits_status_widget.dart'
+    show ParamtresdelaCarteUpdateCardLimitsStatusWidget;

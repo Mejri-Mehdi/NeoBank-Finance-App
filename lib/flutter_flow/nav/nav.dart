@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -153,30 +152,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => GESTIONINVESTSetNewGoalWidget(),
         ),
         FFRoute(
-          name: BASEDigitalCardsWalletWidget.routeName,
-          path: BASEDigitalCardsWalletWidget.routePath,
-          builder: (context, params) => BASEDigitalCardsWalletWidget(),
-        ),
-        FFRoute(
-          name: GESTIONCARTESAddNewCardWidget.routeName,
-          path: GESTIONCARTESAddNewCardWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => GESTIONCARTESAddNewCardWidget(),
-        ),
-        FFRoute(
-          name: GESTIONCARTESCardDetailsOverviewWidget.routeName,
-          path: GESTIONCARTESCardDetailsOverviewWidget.routePath,
-          asyncParams: {
-            'cardDetails': getDoc(['cards'], CardsRecord.fromSnapshot),
-          },
-          builder: (context, params) => GESTIONCARTESCardDetailsOverviewWidget(
-            cardDetails: params.getParam(
-              'cardDetails',
-              ParamType.Document,
-            ),
-          ),
-        ),
-        FFRoute(
           name: ProfileSecurityWidget.routeName,
           path: ProfileSecurityWidget.routePath,
           builder: (context, params) => ProfileSecurityWidget(),
@@ -220,6 +195,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: BASEGeneralSettingsWidget.routeName,
           path: BASEGeneralSettingsWidget.routePath,
           builder: (context, params) => BASEGeneralSettingsWidget(),
+        ),
+        FFRoute(
+          name: TheMainMesCartesDashboardViewCardsTransactionsWidget.routeName,
+          path: TheMainMesCartesDashboardViewCardsTransactionsWidget.routePath,
+          builder: (context, params) =>
+              TheMainMesCartesDashboardViewCardsTransactionsWidget(),
+        ),
+        FFRoute(
+          name: AjouteruneCarteFormCreateaNewCardWidget.routeName,
+          path: AjouteruneCarteFormCreateaNewCardWidget.routePath,
+          builder: (context, params) =>
+              AjouteruneCarteFormCreateaNewCardWidget(),
+        ),
+        FFRoute(
+          name: ParamtresdelaCarteUpdateCardLimitsStatusWidget.routeName,
+          path: ParamtresdelaCarteUpdateCardLimitsStatusWidget.routePath,
+          builder: (context, params) =>
+              ParamtresdelaCarteUpdateCardLimitsStatusWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

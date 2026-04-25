@@ -762,7 +762,7 @@ class _BASEGlobalWalletDashboardWidgetState
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.pushNamed(
-                                          BASEDigitalCardsWalletWidget
+                                          TheMainMesCartesDashboardViewCardsTransactionsWidget
                                               .routeName);
                                     },
                                     child: wrapWithModel(
