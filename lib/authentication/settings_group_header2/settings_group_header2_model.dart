@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'newpage_widget.dart' show NewpageWidget;
+import 'settings_group_header2_widget.dart' show SettingsGroupHeader2Widget;
 import 'package:flutter/material.dart';
 
-class NewpageModel extends FlutterFlowModel<NewpageWidget> {
+class SettingsGroupHeader2Model
+    extends FlutterFlowModel<SettingsGroupHeader2Widget> {
   @override
   void initState(BuildContext context) {}
 

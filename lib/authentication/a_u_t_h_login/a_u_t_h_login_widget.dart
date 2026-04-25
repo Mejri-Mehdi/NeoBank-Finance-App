@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/authentication/button7/button7_widget.dart';
 import '/authentication/switch_component4/switch_component4_widget.dart';
 import '/authentication/text_field7/text_field7_widget.dart';
@@ -249,8 +250,20 @@ class _AUTHLoginWidgetState extends State<AUTHLoginWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed(
-                                  BASEDigitalCardsWalletWidget.routeName);
+                              GoRouter.of(context).prepareAuthEvent();
+
+                              final user = await authManager.signInWithEmail(
+                                context,
+                                _model.textFieldModel1.inputTextController.text,
+                                _model.textFieldModel2.inputTextController.text,
+                              );
+                              if (user == null) {
+                                return;
+                              }
+
+                              context.goNamedAuth(
+                                  BASEGlobalWalletDashboardWidget.routeName,
+                                  context.mounted);
                             },
                             child: wrapWithModel(
                               model: _model.buttonModel,
@@ -585,7 +598,6 @@ class _AUTHLoginWidgetState extends State<AUTHLoginWidget> {
                           ),
                         ].divide(SizedBox(height: 16.0)),
                       ),
-                      Spacer(),
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
@@ -619,29 +631,39 @@ class _AUTHLoginWidgetState extends State<AUTHLoginWidget> {
                                     lineHeight: 1.47,
                                   ),
                             ),
-                            Text(
-                              'Sign Up',
-                              style: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .override(
-                                    font: GoogleFonts.inter(
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(AUTHRegisterWidget.routeName);
+                              },
+                              child: Text(
+                                'Sign Up',
+                                style: FlutterFlowTheme.of(context)
+                                    .labelLarge
+                                    .override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontStyle,
+                                      ),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .fontStyle,
+                                      lineHeight: 1.33,
                                     ),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .fontStyle,
-                                    lineHeight: 1.33,
-                                  ),
+                              ),
                             ),
                           ].divide(SizedBox(width: 4.0)),
                         ),

@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/gestion_wallet/module_chip/module_chip_widget.dart';
 import '/gestion_wallet/transaction_item/transaction_item_widget.dart';
+import '/index.dart';
 import 'b_a_s_e_global_wallet_dashboard_widget.dart'
     show BASEGlobalWalletDashboardWidget;
 import 'package:flutter/material.dart';

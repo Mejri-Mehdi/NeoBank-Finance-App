@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/gestion_wallet/module_chip/module_chip_widget.dart';
 import '/gestion_wallet/transaction_item/transaction_item_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'b_a_s_e_global_wallet_dashboard_model.dart';
@@ -620,79 +621,133 @@ class _BASEGlobalWalletDashboardWidgetState
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  wrapWithModel(
-                                    model: _model.moduleChipModel1,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: ModuleChipWidget(
-                                      icon: Icon(
-                                        Icons.group_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                          BASESplitExpensesGroupsWidget
+                                              .routeName);
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.moduleChipModel1,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: ModuleChipWidget(
+                                        icon: Icon(
+                                          Icons.group_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 24.0,
+                                        ),
+                                        iconbg: FlutterFlowTheme.of(context)
+                                            .primary30,
+                                        label: 'Groups',
                                       ),
-                                      iconbg: FlutterFlowTheme.of(context)
-                                          .primary30,
-                                      label: 'Groups',
                                     ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.moduleChipModel2,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: ModuleChipWidget(
-                                      icon: Icon(
-                                        Icons.account_balance_wallet_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                          BASEGlobalWalletDashboardWidget
+                                              .routeName);
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.moduleChipModel2,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: ModuleChipWidget(
+                                        icon: Icon(
+                                          Icons.account_balance_wallet_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 24.0,
+                                        ),
+                                        iconbg: FlutterFlowTheme.of(context)
+                                            .secondary30,
+                                        label: 'Wallet',
                                       ),
-                                      iconbg: FlutterFlowTheme.of(context)
-                                          .secondary30,
-                                      label: 'Wallet',
                                     ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.moduleChipModel3,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: ModuleChipWidget(
-                                      icon: Icon(
-                                        Icons.show_chart_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                          BASEInvestmentsSavingsGoalsWidget
+                                              .routeName);
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.moduleChipModel3,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: ModuleChipWidget(
+                                        icon: Icon(
+                                          Icons.show_chart_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 24.0,
+                                        ),
+                                        iconbg: FlutterFlowTheme.of(context)
+                                            .accent30,
+                                        label: 'Invest',
                                       ),
-                                      iconbg:
-                                          FlutterFlowTheme.of(context).accent30,
-                                      label: 'Invest',
                                     ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.moduleChipModel4,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: ModuleChipWidget(
-                                      icon: Icon(
-                                        Icons.pie_chart_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                          BASEBudgetManagementWidget.routeName);
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.moduleChipModel4,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: ModuleChipWidget(
+                                        icon: Icon(
+                                          Icons.pie_chart_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 24.0,
+                                        ),
+                                        iconbg: FlutterFlowTheme.of(context)
+                                            .success30,
+                                        label: 'Budget',
                                       ),
-                                      iconbg: FlutterFlowTheme.of(context)
-                                          .success30,
-                                      label: 'Budget',
                                     ),
                                   ),
-                                  wrapWithModel(
-                                    model: _model.moduleChipModel5,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: ModuleChipWidget(
-                                      icon: Icon(
-                                        Icons.credit_card_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                          BASEDigitalCardsWalletWidget
+                                              .routeName);
+                                    },
+                                    child: wrapWithModel(
+                                      model: _model.moduleChipModel5,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: ModuleChipWidget(
+                                        icon: Icon(
+                                          Icons.credit_card_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 24.0,
+                                        ),
+                                        iconbg: FlutterFlowTheme.of(context)
+                                            .error30,
+                                        label: 'Cards',
                                       ),
-                                      iconbg:
-                                          FlutterFlowTheme.of(context).error30,
-                                      label: 'Cards',
                                     ),
                                   ),
                                 ].divide(SizedBox(width: 16.0)),

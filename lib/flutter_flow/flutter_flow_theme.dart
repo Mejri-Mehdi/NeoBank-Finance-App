@@ -87,6 +87,13 @@ abstract class FlutterFlowTheme {
   late Color onSecondary60;
   late Color secondary20;
   late Color secondaryText50;
+  late Color primaryText60;
+  late Color surface20;
+  late Color surface30;
+  late Color divider50;
+  late Color error20;
+  late Color surface40;
+  late Color secondary10;
 
   FFDesignTokens get designToken => FFDesignTokens(this);
 
@@ -224,6 +231,13 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color onSecondary60 = const Color(0x99000000);
   late Color secondary20 = const Color(0x3300E676);
   late Color secondaryText50 = const Color(0x806B7280);
+  late Color primaryText60 = const Color(0x991A1A1A);
+  late Color surface20 = const Color(0x33FFFFFF);
+  late Color surface30 = const Color(0x4DFFFFFF);
+  late Color divider50 = const Color(0x80E5E7EB);
+  late Color error20 = const Color(0x33FF5252);
+  late Color surface40 = const Color(0x66FFFFFF);
+  late Color secondary10 = const Color(0x1A00E676);
 }
 
 abstract class Typography {
@@ -452,6 +466,13 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color onSecondary60 = const Color(0x99000000);
   late Color secondary20 = const Color(0x3369F0AE);
   late Color secondaryText50 = const Color(0x809CA3AF);
+  late Color primaryText60 = const Color(0x99F3F4F6);
+  late Color surface20 = const Color(0x3316161E);
+  late Color surface30 = const Color(0x4D16161E);
+  late Color divider50 = const Color(0x80272732);
+  late Color error20 = const Color(0x33FF5252);
+  late Color surface40 = const Color(0x6616161E);
+  late Color secondary10 = const Color(0x1A69F0AE);
 }
 
 class FFDesignTokens {

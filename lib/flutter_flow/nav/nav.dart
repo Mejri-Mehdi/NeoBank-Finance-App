@@ -77,20 +77,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? BASEDigitalCardsWalletWidget()
+          ? BASEGlobalWalletDashboardWidget()
           : AUTHLoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? BASEDigitalCardsWalletWidget()
+              ? BASEGlobalWalletDashboardWidget()
               : AUTHLoginWidget(),
-        ),
-        FFRoute(
-          name: NewpageWidget.routeName,
-          path: NewpageWidget.routePath,
-          builder: (context, params) => NewpageWidget(),
         ),
         FFRoute(
           name: BASEGlobalWalletDashboardWidget.routeName,
@@ -210,6 +205,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: AUTHProfileSetupWidget.routeName,
           path: AUTHProfileSetupWidget.routePath,
           builder: (context, params) => AUTHProfileSetupWidget(),
+        ),
+        FFRoute(
+          name: AUTHOnboardingWidget.routeName,
+          path: AUTHOnboardingWidget.routePath,
+          builder: (context, params) => AUTHOnboardingWidget(),
+        ),
+        FFRoute(
+          name: BASENotificationsCenterWidget.routeName,
+          path: BASENotificationsCenterWidget.routePath,
+          builder: (context, params) => BASENotificationsCenterWidget(),
+        ),
+        FFRoute(
+          name: BASEGeneralSettingsWidget.routeName,
+          path: BASEGeneralSettingsWidget.routePath,
+          builder: (context, params) => BASEGeneralSettingsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

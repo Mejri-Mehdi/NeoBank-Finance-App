@@ -1,6 +1,7 @@
 import '/authentication/button7/button7_widget.dart';
 import '/authentication/text_field7/text_field7_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'a_u_t_h_register_widget.dart' show AUTHRegisterWidget;
 import 'package:flutter/material.dart';
 

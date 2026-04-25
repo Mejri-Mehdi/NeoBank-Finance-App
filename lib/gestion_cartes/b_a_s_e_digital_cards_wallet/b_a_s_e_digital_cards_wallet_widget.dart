@@ -83,8 +83,8 @@ class _BASEDigitalCardsWalletWidgetState
                             color: FlutterFlowTheme.of(context).primaryText,
                             size: 20.0,
                           ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
+                          onPressed: () async {
+                            context.safePop();
                           },
                         ),
                         Text(

@@ -1,5 +1,4 @@
 // Export pages
-export '/newpage/newpage_widget.dart' show NewpageWidget;
 export '/gestion_wallet/b_a_s_e_global_wallet_dashboard/b_a_s_e_global_wallet_dashboard_widget.dart'
     show BASEGlobalWalletDashboardWidget;
 export '/gestion_wallet/g_e_s_t_i_o_n_w_a_l_l_e_t_add_transaction/g_e_s_t_i_o_n_w_a_l_l_e_t_add_transaction_widget.dart'
@@ -44,3 +43,9 @@ export '/authentication/a_u_t_h_forgot_password/a_u_t_h_forgot_password_widget.d
     show AUTHForgotPasswordWidget;
 export '/authentication/a_u_t_h_profile_setup/a_u_t_h_profile_setup_widget.dart'
     show AUTHProfileSetupWidget;
+export '/authentication/a_u_t_h_onboarding/a_u_t_h_onboarding_widget.dart'
+    show AUTHOnboardingWidget;
+export '/authentication/b_a_s_e_notifications_center/b_a_s_e_notifications_center_widget.dart'
+    show BASENotificationsCenterWidget;
+export '/authentication/b_a_s_e_general_settings/b_a_s_e_general_settings_widget.dart'
+    show BASEGeneralSettingsWidget;

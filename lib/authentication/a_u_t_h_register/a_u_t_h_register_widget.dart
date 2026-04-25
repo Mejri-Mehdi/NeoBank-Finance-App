@@ -1,7 +1,9 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/authentication/button7/button7_widget.dart';
 import '/authentication/text_field7/text_field7_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -290,19 +292,42 @@ class _AUTHRegisterWidgetState extends State<AUTHRegisterWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          wrapWithModel(
-                            model: _model.buttonModel1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: Button7Widget(
-                              content: 'Create Account',
-                              icon_present: false,
-                              icon_end_present: false,
-                              variant: 'primary',
-                              size: 'large',
-                              full_width: true,
-                              loading: false,
-                              disabled: false,
-                              expanded: true,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              GoRouter.of(context).prepareAuthEvent();
+
+                              final user =
+                                  await authManager.createAccountWithEmail(
+                                context,
+                                _model.textFieldModel2.inputTextController.text,
+                                _model.textFieldModel4.inputTextController.text,
+                              );
+                              if (user == null) {
+                                return;
+                              }
+
+                              context.goNamedAuth(
+                                  BASEGlobalWalletDashboardWidget.routeName,
+                                  context.mounted);
+                            },
+                            child: wrapWithModel(
+                              model: _model.buttonModel1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: Button7Widget(
+                                content: 'Create Account',
+                                icon_present: false,
+                                icon_end_present: false,
+                                variant: 'primary',
+                                size: 'large',
+                                full_width: true,
+                                loading: false,
+                                disabled: false,
+                                expanded: true,
+                              ),
                             ),
                           ),
                           Row(
@@ -551,19 +576,28 @@ class _AUTHRegisterWidgetState extends State<AUTHRegisterWidget> {
                                     lineHeight: 1.47,
                                   ),
                             ),
-                            wrapWithModel(
-                              model: _model.buttonModel2,
-                              updateCallback: () => safeSetState(() {}),
-                              child: Button7Widget(
-                                content: 'Sign In',
-                                icon_present: false,
-                                icon_end_present: false,
-                                variant: 'ghost',
-                                size: 'small',
-                                full_width: false,
-                                loading: false,
-                                disabled: false,
-                                expanded: true,
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(AUTHLoginWidget.routeName);
+                              },
+                              child: wrapWithModel(
+                                model: _model.buttonModel2,
+                                updateCallback: () => safeSetState(() {}),
+                                child: Button7Widget(
+                                  content: 'Sign In',
+                                  icon_present: false,
+                                  icon_end_present: false,
+                                  variant: 'ghost',
+                                  size: 'small',
+                                  full_width: false,
+                                  loading: false,
+                                  disabled: false,
+                                  expanded: true,
+                                ),
                               ),
                             ),
                           ].divide(SizedBox(width: 4.0)),
