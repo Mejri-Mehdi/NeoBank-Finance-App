@@ -75,6 +75,7 @@ class _Button5WidgetState extends State<Button5Widget> {
     return Opacity(
       opacity: widget.disabled ? 0.56 : 1.0,
       child: Container(
+        width: double.infinity,
         decoration: BoxDecoration(
           color: () {
             if (widget.variant == 'secondary') {
@@ -213,10 +214,7 @@ class _Button5WidgetState extends State<Button5Widget> {
                     ))
                       widget.icon!,
                     Text(
-                      valueOrDefault<String>(
-                        widget.content,
-                        'Adjust Limit',
-                      ),
+                      'Link Card',
                       maxLines: 1,
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             font: GoogleFonts.inter(

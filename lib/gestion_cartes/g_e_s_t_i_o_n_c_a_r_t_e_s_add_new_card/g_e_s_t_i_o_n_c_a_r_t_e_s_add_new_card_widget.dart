@@ -3,8 +3,8 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/gestion_cartes/button5/button5_widget.dart';
 import '/gestion_cartes/text_field5t/text_field5t_widget.dart';
 import 'dart:ui';
 import '/index.dart';
@@ -958,49 +958,43 @@ class _GESTIONCARTESAddNewCardWidgetState
                       Container(
                         height: 32.0,
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          await CardsRecord.collection
-                              .doc()
-                              .set(createCardsRecordData(
-                                cardName: _model
-                                    .textField1Model.inputTextController.text,
-                                networkType: _model.dropdownValue1,
-                                spendingLimit: double.tryParse(_model
-                                    .textFieldModel4.inputTextController.text),
-                                period: _model.dropdownValue2,
-                                cardNumber: _model
-                                    .textFieldModel1.inputTextController.text,
-                                lastFourDigits: (_model.textFieldModel3
-                                            .inputFocusNode?.hasFocus ??
-                                        false)
-                                    .toString(),
-                                expiryDate: _model
-                                    .textFieldModel2.inputTextController.text,
-                              ));
-                        },
-                        child: wrapWithModel(
-                          model: _model.buttonModel,
-                          updateCallback: () => safeSetState(() {}),
-                          child: Button5Widget(
-                            content: 'Link Card',
-                            icon: Icon(
-                              Icons.add_rounded,
-                              color: FlutterFlowTheme.of(context).onPrimary,
-                              size: 16.0,
+                      Container(
+                        decoration: BoxDecoration(),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            await CardsRecord.collection
+                                .doc()
+                                .set(createCardsRecordData(
+                                  cardName: _model
+                                      .textField1Model.inputTextController.text,
+                                  networkType: _model.dropdownValue1,
+                                  spendingLimit: double.tryParse(_model
+                                      .textFieldModel4
+                                      .inputTextController
+                                      .text),
+                                  period: _model.dropdownValue2,
+                                  cardNumber: _model
+                                      .textFieldModel1.inputTextController.text,
+                                  expiryDate: _model
+                                      .textFieldModel2.inputTextController.text,
+                                  lastFourDigits: _model
+                                      .textFieldModel3.inputTextController.text,
+                                ));
+                          },
+                          text: 'Link Card',
+                          options: FFButtonOptions(
+                            height: 40.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: GoogleFonts.roboto(
+                              color: Color(0x00000000),
+                              fontSize: 0.0,
                             ),
-                            icon_present: true,
-                            icon_end_present: false,
-                            variant: 'primary',
-                            size: 'large',
-                            full_width: true,
-                            loading: false,
-                            disabled: false,
-                            expanded: true,
+                            elevation: 0.0,
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
                       ),

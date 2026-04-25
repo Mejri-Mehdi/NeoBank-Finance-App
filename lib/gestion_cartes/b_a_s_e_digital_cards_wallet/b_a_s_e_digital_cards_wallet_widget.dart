@@ -170,146 +170,181 @@ class _BASEDigitalCardsWalletWidgetState
                                     ? containerCardsRecordList.first
                                     : null;
 
-                            return ClipRRect(
-                              borderRadius: BorderRadius.circular(24.0),
-                              child: Container(
-                                height: 220.0,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(24.0),
-                                  shape: BoxShape.rectangle,
-                                ),
-                                child: Stack(
-                                  alignment: AlignmentDirectional(-1.0, -1.0),
-                                  children: [
-                                    LayoutBuilder(
-                                      builder: (context, constraints) {
-                                        return FbmGradientShaderFill(
-                                          width: constraints.maxWidth.isFinite
-                                              ? constraints.maxWidth
-                                              : 200.0,
-                                          height: 200.0,
-                                          params: ShaderParams(values: {
-                                            'gradientAngle': 135.0,
-                                            'gradientScale': 0.89,
-                                            'gradientOffset': 0.0,
-                                            'noiseIntensity': 0.32,
-                                            'ditherStrength': 2.51,
-                                            'ditherScale': 0.29,
-                                            'animSpeed': 1.46,
-                                            'octaves': 6.06,
-                                            'lacunarity': 2.35,
-                                            'persistence': 0.5,
-                                            'noiseScale': 6.36,
-                                            'colorCount': 7.0,
-                                            'softness': 0.0,
-                                            'exposure': 1.0,
-                                            'contrast': 1.0,
-                                            'bumpStrength': 0.0,
-                                            'lightDirX': 0.55,
-                                            'lightDirY': 0.45,
-                                            'lightDirZ': 1.0,
-                                            'lightIntensity': 1.15,
-                                            'ambient': 0.7,
-                                            'specular': 0.29,
-                                            'shininess': 40.76,
-                                            'metallic': 1.0,
-                                            'roughness': 1.0,
-                                            'edgeFade': 1.72,
-                                            'edgeFadeMode': 0.0,
-                                            'sharpness': 2.2
-                                          }, colors: {
-                                            'color0':
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                            'color1':
-                                                FlutterFlowTheme.of(context)
-                                                    .secondary,
-                                            'color2':
-                                                FlutterFlowTheme.of(context)
-                                                    .tertiary,
-                                            'color3':
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                            'color4':
-                                                FlutterFlowTheme.of(context)
-                                                    .secondary,
-                                            'color5':
-                                                FlutterFlowTheme.of(context)
-                                                    .tertiary,
-                                            'color6':
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                            'color7': Color(0x00808080),
-                                            'color8': Color(0x00808080),
-                                            'color9': Color(0x00808080)
-                                          }),
-                                          animationMode:
-                                              ShaderAnimationMode.continuous,
-                                          cache: false,
-                                        );
-                                      },
+                            return InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(
+                                  GESTIONCARTESCardDetailsOverviewWidget
+                                      .routeName,
+                                  queryParameters: {
+                                    'cardDetails': serializeParam(
+                                      containerCardsRecord,
+                                      ParamType.Document,
                                     ),
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.only(),
-                                      child: BackdropFilter(
-                                        filter: ImageFilter.blur(
-                                          sigmaX: 20.0,
-                                          sigmaY: 20.0,
-                                        ),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .onSurface10,
-                                            shape: BoxShape.rectangle,
-                                            border: Border.all(
+                                  }.withoutNulls,
+                                  extra: <String, dynamic>{
+                                    'cardDetails': containerCardsRecord,
+                                  },
+                                );
+                              },
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(24.0),
+                                child: Container(
+                                  height: 220.0,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(24.0),
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Stack(
+                                    alignment: AlignmentDirectional(-1.0, -1.0),
+                                    children: [
+                                      LayoutBuilder(
+                                        builder: (context, constraints) {
+                                          return FbmGradientShaderFill(
+                                            width: constraints.maxWidth.isFinite
+                                                ? constraints.maxWidth
+                                                : 200.0,
+                                            height: 200.0,
+                                            params: ShaderParams(values: {
+                                              'gradientAngle': 135.0,
+                                              'gradientScale': 0.89,
+                                              'gradientOffset': 0.0,
+                                              'noiseIntensity': 0.32,
+                                              'ditherStrength': 2.51,
+                                              'ditherScale': 0.29,
+                                              'animSpeed': 1.46,
+                                              'octaves': 6.06,
+                                              'lacunarity': 2.35,
+                                              'persistence': 0.5,
+                                              'noiseScale': 6.36,
+                                              'colorCount': 7.0,
+                                              'softness': 0.0,
+                                              'exposure': 1.0,
+                                              'contrast': 1.0,
+                                              'bumpStrength': 0.0,
+                                              'lightDirX': 0.55,
+                                              'lightDirY': 0.45,
+                                              'lightDirZ': 1.0,
+                                              'lightIntensity': 1.15,
+                                              'ambient': 0.7,
+                                              'specular': 0.29,
+                                              'shininess': 40.76,
+                                              'metallic': 1.0,
+                                              'roughness': 1.0,
+                                              'edgeFade': 1.72,
+                                              'edgeFadeMode': 0.0,
+                                              'sharpness': 2.2
+                                            }, colors: {
+                                              'color0':
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              'color1':
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              'color2':
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary,
+                                              'color3':
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              'color4':
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              'color5':
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary,
+                                              'color6':
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              'color7': Color(0x00808080),
+                                              'color8': Color(0x00808080),
+                                              'color9': Color(0x00808080)
+                                            }),
+                                            animationMode:
+                                                ShaderAnimationMode.continuous,
+                                            cache: false,
+                                          );
+                                        },
+                                      ),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.only(),
+                                        child: BackdropFilter(
+                                          filter: ImageFilter.blur(
+                                            sigmaX: 20.0,
+                                            sigmaY: 20.0,
+                                          ),
+                                          child: Container(
+                                            decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .onSurface20,
-                                              width: 1.0,
+                                                      .onSurface10,
+                                              shape: BoxShape.rectangle,
+                                              border: Border.all(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .onSurface20,
+                                                width: 1.0,
+                                              ),
                                             ),
-                                          ),
-                                          child: Padding(
-                                            padding: EdgeInsets.all(32.0),
-                                            child: Container(
-                                              child: ListView(
-                                                padding: EdgeInsets.zero,
-                                                shrinkWrap: true,
-                                                scrollDirection: Axis.vertical,
-                                                children: [
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.min,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .start,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              containerCardsRecord
-                                                                  ?.networkType,
-                                                              'Tunisian Express',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
+                                            child: Padding(
+                                              padding: EdgeInsets.all(32.0),
+                                              child: Container(
+                                                child: ListView(
+                                                  padding: EdgeInsets.zero,
+                                                  shrinkWrap: true,
+                                                  scrollDirection:
+                                                      Axis.vertical,
+                                                  children: [
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                containerCardsRecord
+                                                                    ?.networkType,
+                                                                'Tunisian Express',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .inter(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .onPrimary80,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight: FlutterFlowTheme.of(
                                                                             context)
                                                                         .labelMedium
@@ -318,38 +353,36 @@ class _BASEDigitalCardsWalletWidgetState
                                                                             context)
                                                                         .labelMedium
                                                                         .fontStyle,
+                                                                    lineHeight:
+                                                                        1.38,
                                                                   ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .onPrimary80,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .fontStyle,
-                                                                  lineHeight:
-                                                                      1.38,
-                                                                ),
-                                                          ),
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              containerCardsRecord
-                                                                  ?.cardName,
-                                                              'Card Holder Name',
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .titleMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                containerCardsRecord
+                                                                    ?.cardName,
+                                                                'Card Holder Name',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .inter(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .onPrimary,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
@@ -357,70 +390,45 @@ class _BASEDigitalCardsWalletWidgetState
                                                                             context)
                                                                         .titleMedium
                                                                         .fontStyle,
+                                                                    lineHeight:
+                                                                        1.35,
                                                                   ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .onPrimary,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontStyle,
-                                                                  lineHeight:
-                                                                      1.35,
-                                                                ),
-                                                          ),
-                                                        ].divide(SizedBox(
-                                                            height: 4.0)),
-                                                      ),
-                                                      SvgPicture.network(
-                                                        'https://cdn.simpleicons.org/visa/1a1a1a.svg',
-                                                        width: 32.0,
-                                                        height: 32.0,
-                                                        fit: BoxFit.contain,
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          containerCardsRecord
-                                                              ?.lastFourDigits,
-                                                          '**** **** **** 1234',
+                                                            ),
+                                                          ].divide(SizedBox(
+                                                              height: 4.0)),
                                                         ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleLarge
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleLarge
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .onPrimary,
-                                                                  letterSpacing:
-                                                                      0.0,
+                                                        SvgPicture.network(
+                                                          'https://cdn.simpleicons.org/visa/1a1a1a.svg',
+                                                          width: 32.0,
+                                                          height: 32.0,
+                                                          fit: BoxFit.contain,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .start,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            containerCardsRecord
+                                                                ?.lastFourDigits,
+                                                            '**** **** **** 1234',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .titleLarge
+                                                              .override(
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
@@ -428,193 +436,195 @@ class _BASEDigitalCardsWalletWidgetState
                                                                           context)
                                                                       .titleLarge
                                                                       .fontStyle,
-                                                                  lineHeight:
-                                                                      1.27,
                                                                 ),
-                                                      ),
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .start,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .start,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Text(
-                                                                'EXPIRY',
-                                                                style: FlutterFlowTheme.of(
+                                                                color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .inter(
+                                                                    .onPrimary,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleLarge
+                                                                    .fontStyle,
+                                                                lineHeight:
+                                                                    1.27,
+                                                              ),
+                                                        ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .min,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .start,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Text(
+                                                                  'EXPIRY',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .onPrimary60,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontStyle,
+                                                                        lineHeight:
+                                                                            1.27,
                                                                       ),
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .onPrimary60,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                      lineHeight:
-                                                                          1.27,
-                                                                    ),
-                                                              ),
-                                                              Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  containerCardsRecord
-                                                                      ?.expiryDate,
-                                                                  '03/27',
                                                                 ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLarge
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .inter(
+                                                                Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    containerCardsRecord
+                                                                        ?.expiryDate,
+                                                                    '03/27',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .onPrimary,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .fontWeight,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .fontStyle,
+                                                                        lineHeight:
+                                                                            1.33,
                                                                       ),
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .onPrimary,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontStyle,
-                                                                      lineHeight:
-                                                                          1.33,
-                                                                    ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .start,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Text(
-                                                                'CVV',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .inter(
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .min,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .start,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Text(
+                                                                  'CVV',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .onPrimary60,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontWeight,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .labelSmall
                                                                             .fontStyle,
+                                                                        lineHeight:
+                                                                            1.27,
                                                                       ),
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .onPrimary60,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelSmall
-                                                                          .fontStyle,
-                                                                      lineHeight:
-                                                                          1.27,
-                                                                    ),
-                                                              ),
-                                                              Text(
-                                                                '253',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLarge
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .inter(
+                                                                ),
+                                                                Text(
+                                                                  '253',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .labelLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .onPrimary,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .fontWeight,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .labelLarge
                                                                             .fontStyle,
+                                                                        lineHeight:
+                                                                            1.33,
                                                                       ),
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .onPrimary,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelLarge
-                                                                          .fontStyle,
-                                                                      lineHeight:
-                                                                          1.33,
-                                                                    ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ].divide(SizedBox(
-                                                            width: 24.0)),
-                                                      ),
-                                                    ].divide(
-                                                        SizedBox(height: 8.0)),
-                                                  ),
-                                                ],
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ].divide(SizedBox(
+                                                              width: 24.0)),
+                                                        ),
+                                                      ].divide(SizedBox(
+                                                          height: 8.0)),
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             );

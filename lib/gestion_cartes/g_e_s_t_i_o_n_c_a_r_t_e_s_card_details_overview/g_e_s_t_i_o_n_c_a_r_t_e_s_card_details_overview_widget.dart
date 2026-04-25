@@ -120,7 +120,7 @@ class _GESTIONCARTESCardDetailsOverviewWidgetState
                             buttonSize: 40.0,
                             fillColor: Colors.transparent,
                             icon: Icon(
-                              Icons.more_horiz_rounded,
+                              Icons.delete_forever,
                               color: FlutterFlowTheme.of(context).primaryText,
                               size: 24.0,
                             ),

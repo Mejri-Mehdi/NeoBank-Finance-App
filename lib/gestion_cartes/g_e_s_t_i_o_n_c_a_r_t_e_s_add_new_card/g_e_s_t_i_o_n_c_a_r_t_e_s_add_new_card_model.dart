@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/gestion_cartes/button5/button5_widget.dart';
 import '/gestion_cartes/text_field5t/text_field5t_widget.dart';
 import '/index.dart';
 import 'g_e_s_t_i_o_n_c_a_r_t_e_s_add_new_card_widget.dart'
@@ -27,8 +26,6 @@ class GESTIONCARTESAddNewCardModel
   FormFieldController<String>? dropdownValueController2;
   // Model for TextField.
   late TextField5tModel textFieldModel4;
-  // Model for Button.
-  late Button5Model buttonModel;
 
   @override
   void initState(BuildContext context) {
@@ -37,7 +34,6 @@ class GESTIONCARTESAddNewCardModel
     textFieldModel2 = createModel(context, () => TextField5tModel());
     textFieldModel3 = createModel(context, () => TextField5tModel());
     textFieldModel4 = createModel(context, () => TextField5tModel());
-    buttonModel = createModel(context, () => Button5Model());
   }
 
   @override
@@ -47,6 +43,5 @@ class GESTIONCARTESAddNewCardModel
     textFieldModel2.dispose();
     textFieldModel3.dispose();
     textFieldModel4.dispose();
-    buttonModel.dispose();
   }
 }
