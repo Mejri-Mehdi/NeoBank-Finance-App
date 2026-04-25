@@ -3,7 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/gestion_wallet/date_header/date_header_widget.dart';
 import '/gestion_wallet/swipeable_transaction/swipeable_transaction_widget.dart';
-import '/gestion_wallet/text_field2/text_field2_widget.dart';
+import '/gestion_wallet/text_field/text_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'g_e_s_t_i_o_n_w_a_l_l_e_t_transaction_history_model.dart';
@@ -130,7 +130,7 @@ class _GESTIONWALLETTransactionHistoryWidgetState
                           wrapWithModel(
                             model: _model.textFieldModel,
                             updateCallback: () => safeSetState(() {}),
-                            child: TextField2Widget(
+                            child: TextFieldWidget(
                               label: false,
                               helper: false,
                               hint: 'Search transactions...',

@@ -14,10 +14,10 @@ class TransactionItemWidget extends StatefulWidget {
     String? subtitle,
     String? title,
     bool? is_income,
-  })  : this.amount = amount ?? 'SlotValue(\$amount)',
-        this.date = date ?? 'SlotValue(\$date)',
-        this.subtitle = subtitle ?? 'SlotValue(\$subtitle)',
-        this.title = title ?? 'SlotValue(\$title)',
+  })  : this.amount = amount ?? '-\$2,499.00',
+        this.date = date ?? 'Today',
+        this.subtitle = subtitle ?? 'MacBook Pro M3',
+        this.title = title ?? 'Apple Store',
         this.is_income = is_income ?? false;
 
   final String amount;
@@ -89,7 +89,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                 Text(
                   valueOrDefault<String>(
                     widget.title,
-                    'SlotValue(\$title)',
+                    'Apple Store',
                   ),
                   maxLines: 1,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -110,7 +110,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
                 Text(
                   valueOrDefault<String>(
                     widget.subtitle,
-                    'SlotValue(\$subtitle)',
+                    'MacBook Pro M3',
                   ),
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         font: GoogleFonts.inter(
@@ -139,7 +139,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
               Text(
                 valueOrDefault<String>(
                   widget.amount,
-                  'SlotValue(\$amount)',
+                  '-\$2,499.00',
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       font: GoogleFonts.inter(
@@ -160,7 +160,7 @@ class _TransactionItemWidgetState extends State<TransactionItemWidget> {
               Text(
                 valueOrDefault<String>(
                   widget.date,
-                  'SlotValue(\$date)',
+                  'Today',
                 ),
                 style: FlutterFlowTheme.of(context).labelSmall.override(
                       font: GoogleFonts.inter(

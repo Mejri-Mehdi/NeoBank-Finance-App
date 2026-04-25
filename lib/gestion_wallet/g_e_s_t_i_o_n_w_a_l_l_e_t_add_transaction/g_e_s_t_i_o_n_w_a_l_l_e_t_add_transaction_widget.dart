@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/gestion_wallet/button2/button2_widget.dart';
-import '/gestion_wallet/text_field2/text_field2_widget.dart';
+import '/gestion_wallet/button/button_widget.dart';
+import '/gestion_wallet/text_field/text_field_widget.dart';
 import '/gestion_wallet/transaction_toggle/transaction_toggle_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -423,7 +423,7 @@ class _GESTIONWALLETAddTransactionWidgetState
                       wrapWithModel(
                         model: _model.textFieldModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: TextField2Widget(
+                        child: TextFieldWidget(
                           label: false,
                           helper: false,
                           hint: 'What was this for?',
@@ -445,7 +445,7 @@ class _GESTIONWALLETAddTransactionWidgetState
               wrapWithModel(
                 model: _model.buttonModel,
                 updateCallback: () => safeSetState(() {}),
-                child: Button2Widget(
+                child: ButtonWidget(
                   content: 'Save Transaction',
                   icon: Icon(
                     Icons.check_circle_rounded,

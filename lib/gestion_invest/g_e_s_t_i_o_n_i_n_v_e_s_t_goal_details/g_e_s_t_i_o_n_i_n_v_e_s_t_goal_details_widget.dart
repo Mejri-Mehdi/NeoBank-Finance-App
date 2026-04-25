@@ -2,7 +2,7 @@ import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/gestion_invest/button5/button5_widget.dart';
+import '/gestion_invest/button4/button4_widget.dart';
 import '/gestion_invest/transaction_item3/transaction_item3_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -368,7 +368,7 @@ class _GESTIONINVESTGoalDetailsWidgetState
                             wrapWithModel(
                               model: _model.buttonModel1,
                               updateCallback: () => safeSetState(() {}),
-                              child: Button5Widget(
+                              child: Button4Widget(
                                 content: 'Add Funds',
                                 icon: Icon(
                                   Icons.add_rounded,
@@ -395,7 +395,7 @@ class _GESTIONINVESTGoalDetailsWidgetState
                                   child: wrapWithModel(
                                     model: _model.buttonModel2,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: Button5Widget(
+                                    child: Button4Widget(
                                       content: 'Sell Assets',
                                       icon_present: false,
                                       icon_end_present: false,
@@ -413,7 +413,7 @@ class _GESTIONINVESTGoalDetailsWidgetState
                                   child: wrapWithModel(
                                     model: _model.buttonModel3,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: Button5Widget(
+                                    child: Button4Widget(
                                       content: 'Rebalance',
                                       icon_present: false,
                                       icon_end_present: false,

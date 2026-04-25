@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1023218965546",
+    "project_id": "projet-mobile-aiva",
+    "storage_bucket": "projet-mobile-aiva.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023218965546:android:da74d558836b043ba27753",
+        "android_client_info": {
+          "package_name": "com.mycompany.projetmobileaiva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023218965546-77l3hmgov34aisa6a297b7sj39s9j1f2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.projetmobileaiva",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "1023218965546-vig87laq2ntkvsoglud1im52c3arba35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDovgLOg_U1P0wXSPh92kza2EEWuC8FekU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023218965546-vig87laq2ntkvsoglud1im52c3arba35.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1023218965546-h4tq0dkjjqc1nvvs4g37cqtt3mjtgacm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.projetmobileaiva"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

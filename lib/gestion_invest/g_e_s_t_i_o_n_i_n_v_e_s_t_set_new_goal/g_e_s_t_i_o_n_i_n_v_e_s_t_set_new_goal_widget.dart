@@ -4,9 +4,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/gestion_invest/button5/button5_widget.dart';
+import '/gestion_invest/button4/button4_widget.dart';
 import '/gestion_invest/switch_component2/switch_component2_widget.dart';
-import '/gestion_invest/text_field5/text_field5_widget.dart';
+import '/gestion_invest/text_field4/text_field4_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_palette/material_palette.dart';
@@ -293,7 +293,7 @@ class _GESTIONINVESTSetNewGoalWidgetState
                               wrapWithModel(
                                 model: _model.textFieldModel1,
                                 updateCallback: () => safeSetState(() {}),
-                                child: TextField5Widget(
+                                child: TextField4Widget(
                                   label: false,
                                   helper: false,
                                   hint: 'e.g. Tesla Model S, Bali Trip',
@@ -447,7 +447,7 @@ class _GESTIONINVESTSetNewGoalWidgetState
                                     wrapWithModel(
                                       model: _model.textFieldModel2,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: TextField5Widget(
+                                      child: TextField4Widget(
                                         label: false,
                                         helper: false,
                                         hint: '\$0.00',
@@ -503,7 +503,7 @@ class _GESTIONINVESTSetNewGoalWidgetState
                                     wrapWithModel(
                                       model: _model.textFieldModel3,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: TextField5Widget(
+                                      child: TextField4Widget(
                                         label: false,
                                         helper: false,
                                         hint: '\$0.00',
@@ -831,7 +831,7 @@ class _GESTIONINVESTSetNewGoalWidgetState
                       wrapWithModel(
                         model: _model.buttonModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: Button5Widget(
+                        child: Button4Widget(
                           content: 'Set Goal',
                           icon: Icon(
                             Icons.check_circle_rounded,

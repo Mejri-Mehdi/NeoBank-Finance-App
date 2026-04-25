@@ -1,7 +1,8 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/gestion_cartes/button/button_widget.dart';
+import '/gestion_cartes/button5/button5_widget.dart';
 import '/gestion_cartes/card_transaction/card_transaction_widget.dart';
 import '/gestion_cartes/spending_limit_indicator/spending_limit_indicator_widget.dart';
 import 'dart:ui';
@@ -12,7 +13,12 @@ import 'g_e_s_t_i_o_n_c_a_r_t_e_s_card_details_overview_model.dart';
 export 'g_e_s_t_i_o_n_c_a_r_t_e_s_card_details_overview_model.dart';
 
 class GESTIONCARTESCardDetailsOverviewWidget extends StatefulWidget {
-  const GESTIONCARTESCardDetailsOverviewWidget({super.key});
+  const GESTIONCARTESCardDetailsOverviewWidget({
+    super.key,
+    required this.cardDetails,
+  });
+
+  final CardsRecord? cardDetails;
 
   static String routeName = 'GESTIONCARTESCardDetailsOverview';
   static String routePath = '/gESTIONCARTESCardDetailsOverview';
@@ -116,8 +122,32 @@ class _GESTIONCARTESCardDetailsOverviewWidgetState
                               color: FlutterFlowTheme.of(context).primaryText,
                               size: 24.0,
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
+                            onPressed: () async {
+                              var confirmDialogResponse =
+                                  await showDialog<bool>(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: Text('Delete Card'),
+                                            content: Text(
+                                                'Are you sure you want to remove this card?'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: Text('Cancel'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: Text('Confirm'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ) ??
+                                      false;
+                              await widget.cardDetails!.reference.delete();
                             },
                           ),
                         ],
@@ -571,7 +601,7 @@ class _GESTIONCARTESCardDetailsOverviewWidgetState
                           child: wrapWithModel(
                             model: _model.buttonModel1,
                             updateCallback: () => safeSetState(() {}),
-                            child: ButtonWidget(
+                            child: Button5Widget(
                               content: 'Freeze',
                               icon: Icon(
                                 Icons.lock_outline_rounded,
@@ -594,7 +624,7 @@ class _GESTIONCARTESCardDetailsOverviewWidgetState
                           child: wrapWithModel(
                             model: _model.buttonModel2,
                             updateCallback: () => safeSetState(() {}),
-                            child: ButtonWidget(
+                            child: Button5Widget(
                               content: 'Limits',
                               icon: Icon(
                                 Icons.tune_rounded,

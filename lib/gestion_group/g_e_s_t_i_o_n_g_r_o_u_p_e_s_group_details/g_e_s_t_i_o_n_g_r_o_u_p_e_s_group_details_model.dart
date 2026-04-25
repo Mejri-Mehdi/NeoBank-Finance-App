@@ -1,5 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/gestion_group/button4/button4_widget.dart';
+import '/gestion_group/button3/button3_widget.dart';
 import '/gestion_group/group_expense_item/group_expense_item_widget.dart';
 import '/gestion_group/member_avatar/member_avatar_widget.dart';
 import 'g_e_s_t_i_o_n_g_r_o_u_p_e_s_group_details_widget.dart'
@@ -11,9 +11,9 @@ class GESTIONGROUPESGroupDetailsModel
   ///  State fields for stateful widgets in this page.
 
   // Model for Button.
-  late Button4Model buttonModel1;
+  late Button3Model buttonModel1;
   // Model for Button.
-  late Button4Model buttonModel2;
+  late Button3Model buttonModel2;
   // Model for MemberAvatar.
   late MemberAvatarModel memberAvatarModel1;
   // Model for MemberAvatar.
@@ -37,8 +37,8 @@ class GESTIONGROUPESGroupDetailsModel
 
   @override
   void initState(BuildContext context) {
-    buttonModel1 = createModel(context, () => Button4Model());
-    buttonModel2 = createModel(context, () => Button4Model());
+    buttonModel1 = createModel(context, () => Button3Model());
+    buttonModel2 = createModel(context, () => Button3Model());
     memberAvatarModel1 = createModel(context, () => MemberAvatarModel());
     memberAvatarModel2 = createModel(context, () => MemberAvatarModel());
     memberAvatarModel3 = createModel(context, () => MemberAvatarModel());

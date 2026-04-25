@@ -1,11 +1,14 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/gestion_cartes/button/button_widget.dart';
-import '/gestion_cartes/text_field/text_field_widget.dart';
+import '/gestion_cartes/button5/button5_widget.dart';
+import '/gestion_cartes/text_field5/text_field5_widget.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -88,8 +91,9 @@ class _GESTIONCARTESAddNewCardWidgetState
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 size: 24.0,
                               ),
-                              onPressed: () {
-                                print('IconButton pressed ...');
+                              onPressed: () async {
+                                context.pushNamed(
+                                    BASEDigitalCardsWalletWidget.routeName);
                               },
                             ),
                             Text(
@@ -522,7 +526,7 @@ class _GESTIONCARTESAddNewCardWidgetState
                               wrapWithModel(
                                 model: _model.textFieldModel1,
                                 updateCallback: () => safeSetState(() {}),
-                                child: TextFieldWidget(
+                                child: TextField5Widget(
                                   label: false,
                                   helper: false,
                                   hint: 'e.g. Personal Spending',
@@ -674,7 +678,7 @@ class _GESTIONCARTESAddNewCardWidgetState
                                     wrapWithModel(
                                       model: _model.textFieldModel2,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: TextFieldWidget(
+                                      child: TextField5Widget(
                                         label: false,
                                         helper: false,
                                         hint: '0.00',
@@ -801,24 +805,44 @@ class _GESTIONCARTESAddNewCardWidgetState
                       Container(
                         height: 32.0,
                       ),
-                      wrapWithModel(
-                        model: _model.buttonModel,
-                        updateCallback: () => safeSetState(() {}),
-                        child: ButtonWidget(
-                          content: 'Link Card',
-                          icon: Icon(
-                            Icons.add_rounded,
-                            color: FlutterFlowTheme.of(context).onPrimary,
-                            size: 16.0,
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          await CardsRecord.collection
+                              .doc()
+                              .set(createCardsRecordData(
+                                cardName: _model
+                                    .textFieldModel1.inputTextController.text,
+                                networkType: _model.dropdownValue1,
+                                spendingLimit: double.tryParse(_model
+                                    .textFieldModel2.inputTextController.text),
+                                period: _model.dropdownValue2,
+                                createdAt: getCurrentTimestamp,
+                                userRef: currentUserReference,
+                              ));
+                        },
+                        child: wrapWithModel(
+                          model: _model.buttonModel,
+                          updateCallback: () => safeSetState(() {}),
+                          child: Button5Widget(
+                            content: 'Link Card',
+                            icon: Icon(
+                              Icons.add_rounded,
+                              color: FlutterFlowTheme.of(context).onPrimary,
+                              size: 16.0,
+                            ),
+                            icon_present: true,
+                            icon_end_present: false,
+                            variant: 'primary',
+                            size: 'large',
+                            full_width: true,
+                            loading: false,
+                            disabled: false,
+                            expanded: true,
                           ),
-                          icon_present: true,
-                          icon_end_present: false,
-                          variant: 'primary',
-                          size: 'large',
-                          full_width: true,
-                          loading: false,
-                          disabled: false,
-                          expanded: true,
                         ),
                       ),
                     ],

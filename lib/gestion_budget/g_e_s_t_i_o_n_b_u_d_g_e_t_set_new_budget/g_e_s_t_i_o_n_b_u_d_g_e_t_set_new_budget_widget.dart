@@ -1,10 +1,10 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/gestion_budget/button3/button3_widget.dart';
+import '/gestion_budget/button2/button2_widget.dart';
 import '/gestion_budget/category_item/category_item_widget.dart';
 import '/gestion_budget/switch_component/switch_component_widget.dart';
-import '/gestion_budget/text_field3/text_field3_widget.dart';
+import '/gestion_budget/text_field2/text_field2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'g_e_s_t_i_o_n_b_u_d_g_e_t_set_new_budget_model.dart';
@@ -319,7 +319,7 @@ class _GESTIONBUDGETSetNewBudgetWidgetState
                               wrapWithModel(
                                 model: _model.textFieldModel1,
                                 updateCallback: () => safeSetState(() {}),
-                                child: TextField3Widget(
+                                child: TextField2Widget(
                                   label: false,
                                   helper: false,
                                   hint: '0.00',
@@ -382,7 +382,7 @@ class _GESTIONBUDGETSetNewBudgetWidgetState
                                     wrapWithModel(
                                       model: _model.textFieldModel2,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: TextField3Widget(
+                                      child: TextField2Widget(
                                         label: false,
                                         helper: false,
                                         hint: 'Oct 01, 2023',
@@ -441,7 +441,7 @@ class _GESTIONBUDGETSetNewBudgetWidgetState
                                     wrapWithModel(
                                       model: _model.textFieldModel3,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: TextField3Widget(
+                                      child: TextField2Widget(
                                         label: false,
                                         helper: false,
                                         hint: 'Oct 31, 2023',
@@ -593,7 +593,7 @@ class _GESTIONBUDGETSetNewBudgetWidgetState
                       wrapWithModel(
                         model: _model.buttonModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: Button3Widget(
+                        child: Button2Widget(
                           content: 'Save Budget',
                           icon: Icon(
                             Icons.check_circle_rounded,

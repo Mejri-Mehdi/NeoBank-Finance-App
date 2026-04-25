@@ -1,17 +1,17 @@
 // Export pages
 export '/newpage/newpage_widget.dart' show NewpageWidget;
-export '/gestion_cartes/b_a_s_e_digital_cards_wallet/b_a_s_e_digital_cards_wallet_widget.dart'
-    show BASEDigitalCardsWalletWidget;
-export '/gestion_cartes/g_e_s_t_i_o_n_c_a_r_t_e_s_card_details_overview/g_e_s_t_i_o_n_c_a_r_t_e_s_card_details_overview_widget.dart'
-    show GESTIONCARTESCardDetailsOverviewWidget;
-export '/gestion_cartes/g_e_s_t_i_o_n_c_a_r_t_e_s_add_new_card/g_e_s_t_i_o_n_c_a_r_t_e_s_add_new_card_widget.dart'
-    show GESTIONCARTESAddNewCardWidget;
+export '/gestion_wallet/b_a_s_e_global_wallet_dashboard/b_a_s_e_global_wallet_dashboard_widget.dart'
+    show BASEGlobalWalletDashboardWidget;
+export '/gestion_wallet/g_e_s_t_i_o_n_w_a_l_l_e_t_add_transaction/g_e_s_t_i_o_n_w_a_l_l_e_t_add_transaction_widget.dart'
+    show GESTIONWALLETAddTransactionWidget;
+export '/gestion_wallet/g_e_s_t_i_o_n_w_a_l_l_e_t_transaction_history/g_e_s_t_i_o_n_w_a_l_l_e_t_transaction_history_widget.dart'
+    show GESTIONWALLETTransactionHistoryWidget;
 export '/gestion_budget/b_a_s_e_budget_management/b_a_s_e_budget_management_widget.dart'
     show BASEBudgetManagementWidget;
-export '/gestion_budget/g_e_s_t_i_o_n_b_u_d_g_e_t_set_new_budget/g_e_s_t_i_o_n_b_u_d_g_e_t_set_new_budget_widget.dart'
-    show GESTIONBUDGETSetNewBudgetWidget;
 export '/gestion_budget/g_e_s_t_i_o_n_b_u_d_g_e_t_budget_details/g_e_s_t_i_o_n_b_u_d_g_e_t_budget_details_widget.dart'
     show GESTIONBUDGETBudgetDetailsWidget;
+export '/gestion_budget/g_e_s_t_i_o_n_b_u_d_g_e_t_set_new_budget/g_e_s_t_i_o_n_b_u_d_g_e_t_set_new_budget_widget.dart'
+    show GESTIONBUDGETSetNewBudgetWidget;
 export '/gestion_group/b_a_s_e_split_expenses_groups/b_a_s_e_split_expenses_groups_widget.dart'
     show BASESplitExpensesGroupsWidget;
 export '/gestion_group/g_e_s_t_i_o_n_g_r_o_u_p_e_s_create_group/g_e_s_t_i_o_n_g_r_o_u_p_e_s_create_group_widget.dart'
@@ -20,19 +20,27 @@ export '/gestion_group/g_e_s_t_i_o_n_g_r_o_u_p_e_s_add_expense/g_e_s_t_i_o_n_g_r
     show GESTIONGROUPESAddExpenseWidget;
 export '/gestion_group/g_e_s_t_i_o_n_g_r_o_u_p_e_s_group_details/g_e_s_t_i_o_n_g_r_o_u_p_e_s_group_details_widget.dart'
     show GESTIONGROUPESGroupDetailsWidget;
+export '/gestion_invest/b_a_s_e_investments_savings_goals/b_a_s_e_investments_savings_goals_widget.dart'
+    show BASEInvestmentsSavingsGoalsWidget;
 export '/gestion_invest/g_e_s_t_i_o_n_i_n_v_e_s_t_goal_details/g_e_s_t_i_o_n_i_n_v_e_s_t_goal_details_widget.dart'
     show GESTIONINVESTGoalDetailsWidget;
 export '/gestion_invest/g_e_s_t_i_o_n_i_n_v_e_s_t_set_new_goal/g_e_s_t_i_o_n_i_n_v_e_s_t_set_new_goal_widget.dart'
     show GESTIONINVESTSetNewGoalWidget;
-export '/gestion_invest/b_a_s_e_investments_savings_goals/b_a_s_e_investments_savings_goals_widget.dart'
-    show BASEInvestmentsSavingsGoalsWidget;
-export '/others/transaction_history/transaction_history_widget.dart'
-    show TransactionHistoryWidget;
+export '/gestion_cartes/b_a_s_e_digital_cards_wallet/b_a_s_e_digital_cards_wallet_widget.dart'
+    show BASEDigitalCardsWalletWidget;
+export '/gestion_cartes/g_e_s_t_i_o_n_c_a_r_t_e_s_add_new_card/g_e_s_t_i_o_n_c_a_r_t_e_s_add_new_card_widget.dart'
+    show GESTIONCARTESAddNewCardWidget;
+export '/gestion_cartes/g_e_s_t_i_o_n_c_a_r_t_e_s_card_details_overview/g_e_s_t_i_o_n_c_a_r_t_e_s_card_details_overview_widget.dart'
+    show GESTIONCARTESCardDetailsOverviewWidget;
 export '/others/profile_security/profile_security_widget.dart'
     show ProfileSecurityWidget;
-export '/gestion_wallet/g_e_s_t_i_o_n_w_a_l_l_e_t_transaction_history/g_e_s_t_i_o_n_w_a_l_l_e_t_transaction_history_widget.dart'
-    show GESTIONWALLETTransactionHistoryWidget;
-export '/gestion_wallet/g_e_s_t_i_o_n_w_a_l_l_e_t_add_transaction/g_e_s_t_i_o_n_w_a_l_l_e_t_add_transaction_widget.dart'
-    show GESTIONWALLETAddTransactionWidget;
-export '/gestion_wallet/b_a_s_e_global_wallet_dashboard/b_a_s_e_global_wallet_dashboard_widget.dart'
-    show BASEGlobalWalletDashboardWidget;
+export '/others/transaction_history/transaction_history_widget.dart'
+    show TransactionHistoryWidget;
+export '/authentication/a_u_t_h_login/a_u_t_h_login_widget.dart'
+    show AUTHLoginWidget;
+export '/authentication/a_u_t_h_register/a_u_t_h_register_widget.dart'
+    show AUTHRegisterWidget;
+export '/authentication/a_u_t_h_forgot_password/a_u_t_h_forgot_password_widget.dart'
+    show AUTHForgotPasswordWidget;
+export '/authentication/a_u_t_h_profile_setup/a_u_t_h_profile_setup_widget.dart'
+    show AUTHProfileSetupWidget;

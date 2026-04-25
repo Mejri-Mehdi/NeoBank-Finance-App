@@ -9,13 +9,12 @@ class ModuleChipWidget extends StatefulWidget {
   const ModuleChipWidget({
     super.key,
     this.icon,
-    Color? iconbg,
+    this.iconbg,
     String? label,
-  })  : this.iconbg = iconbg ?? const Color(0x4D2B0195),
-        this.label = label ?? 'Groups';
+  }) : this.label = label ?? 'Groups';
 
   final Widget? icon;
-  final Color iconbg;
+  final Color? iconbg;
   final String label;
 
   @override

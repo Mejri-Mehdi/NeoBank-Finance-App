@@ -9,15 +9,14 @@ class BalanceSummaryCardWidget extends StatefulWidget {
   const BalanceSummaryCardWidget({
     super.key,
     String? amount,
-    Color? color,
+    this.color,
     this.icon,
     String? label,
   })  : this.amount = amount ?? '\$420.50',
-        this.color = color ?? const Color(0xFFE20E0E),
         this.label = label ?? 'You owe';
 
   final String amount;
-  final Color color;
+  final Color? color;
   final Widget? icon;
   final String label;
 

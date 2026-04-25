@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/gestion_budget/button3/button3_widget.dart';
+import '/gestion_budget/button2/button2_widget.dart';
 import '/gestion_budget/transaction_item2/transaction_item2_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -590,7 +590,7 @@ class _GESTIONBUDGETBudgetDetailsWidgetState
                     wrapWithModel(
                       model: _model.buttonModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: Button3Widget(
+                      child: Button2Widget(
                         content: 'Edit Budget Limit',
                         icon: Icon(
                           Icons.edit_rounded,

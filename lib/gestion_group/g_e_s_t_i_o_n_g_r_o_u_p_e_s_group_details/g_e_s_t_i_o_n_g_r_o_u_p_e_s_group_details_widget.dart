@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/gestion_group/button4/button4_widget.dart';
+import '/gestion_group/button3/button3_widget.dart';
 import '/gestion_group/group_expense_item/group_expense_item_widget.dart';
 import '/gestion_group/member_avatar/member_avatar_widget.dart';
 import 'package:flutter/material.dart';
@@ -325,7 +325,7 @@ class _GESTIONGROUPESGroupDetailsWidgetState
                                                 model: _model.buttonModel1,
                                                 updateCallback: () =>
                                                     safeSetState(() {}),
-                                                child: Button4Widget(
+                                                child: Button3Widget(
                                                   content: 'Settle Up',
                                                   icon: Icon(
                                                     Icons.payments_rounded,
@@ -348,7 +348,7 @@ class _GESTIONGROUPESGroupDetailsWidgetState
                                                 model: _model.buttonModel2,
                                                 updateCallback: () =>
                                                     safeSetState(() {}),
-                                                child: Button4Widget(
+                                                child: Button3Widget(
                                                   content: 'Invite',
                                                   icon: Icon(
                                                     Icons.person_add_rounded,
@@ -399,7 +399,8 @@ class _GESTIONGROUPESGroupDetailsWidgetState
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall
                                               .override(
-                                                font: GoogleFonts.interTight(
+                                                font:
+                                                    GoogleFonts.plusJakartaSans(
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -575,7 +576,7 @@ class _GESTIONGROUPESGroupDetailsWidgetState
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              font: GoogleFonts.interTight(
+                                              font: GoogleFonts.plusJakartaSans(
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall

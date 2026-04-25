@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/gestion_group/button4/button4_widget.dart';
-import '/gestion_group/text_field4/text_field4_widget.dart';
+import '/gestion_group/button3/button3_widget.dart';
+import '/gestion_group/text_field3/text_field3_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'g_e_s_t_i_o_n_g_r_o_u_p_e_s_create_group_model.dart';
@@ -213,7 +213,7 @@ class _GESTIONGROUPESCreateGroupWidgetState
                               wrapWithModel(
                                 model: _model.textFieldModel1,
                                 updateCallback: () => safeSetState(() {}),
-                                child: TextField4Widget(
+                                child: TextField3Widget(
                                   label: false,
                                   helper: false,
                                   hint: 'e.g. Trip to Bali',
@@ -259,7 +259,7 @@ class _GESTIONGROUPESCreateGroupWidgetState
                               wrapWithModel(
                                 model: _model.textFieldModel2,
                                 updateCallback: () => safeSetState(() {}),
-                                child: TextField4Widget(
+                                child: TextField3Widget(
                                   label: false,
                                   helper: false,
                                   hint: 'What is this group for?',
@@ -498,7 +498,7 @@ class _GESTIONGROUPESCreateGroupWidgetState
                       wrapWithModel(
                         model: _model.buttonModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: Button4Widget(
+                        child: Button3Widget(
                           content: 'Create Group',
                           icon_present: false,
                           icon_end_present: false,

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/gestion_budget/button3/button3_widget.dart';
+import '/gestion_budget/button2/button2_widget.dart';
 import '/gestion_budget/category_item/category_item_widget.dart';
 import '/gestion_budget/switch_component/switch_component_widget.dart';
-import '/gestion_budget/text_field3/text_field3_widget.dart';
+import '/gestion_budget/text_field2/text_field2_widget.dart';
 import 'g_e_s_t_i_o_n_b_u_d_g_e_t_set_new_budget_widget.dart'
     show GESTIONBUDGETSetNewBudgetWidget;
 import 'package:flutter/material.dart';
@@ -28,15 +28,15 @@ class GESTIONBUDGETSetNewBudgetModel
   // Model for CategoryItem.
   late CategoryItemModel categoryItemModel8;
   // Model for TextField.
-  late TextField3Model textFieldModel1;
+  late TextField2Model textFieldModel1;
   // Model for TextField.
-  late TextField3Model textFieldModel2;
+  late TextField2Model textFieldModel2;
   // Model for TextField.
-  late TextField3Model textFieldModel3;
+  late TextField2Model textFieldModel3;
   // Model for SwitchComponent.
   late SwitchComponentModel switchComponentModel;
   // Model for Button.
-  late Button3Model buttonModel;
+  late Button2Model buttonModel;
 
   @override
   void initState(BuildContext context) {
@@ -48,11 +48,11 @@ class GESTIONBUDGETSetNewBudgetModel
     categoryItemModel6 = createModel(context, () => CategoryItemModel());
     categoryItemModel7 = createModel(context, () => CategoryItemModel());
     categoryItemModel8 = createModel(context, () => CategoryItemModel());
-    textFieldModel1 = createModel(context, () => TextField3Model());
-    textFieldModel2 = createModel(context, () => TextField3Model());
-    textFieldModel3 = createModel(context, () => TextField3Model());
+    textFieldModel1 = createModel(context, () => TextField2Model());
+    textFieldModel2 = createModel(context, () => TextField2Model());
+    textFieldModel3 = createModel(context, () => TextField2Model());
     switchComponentModel = createModel(context, () => SwitchComponentModel());
-    buttonModel = createModel(context, () => Button3Model());
+    buttonModel = createModel(context, () => Button2Model());
   }
 
   @override

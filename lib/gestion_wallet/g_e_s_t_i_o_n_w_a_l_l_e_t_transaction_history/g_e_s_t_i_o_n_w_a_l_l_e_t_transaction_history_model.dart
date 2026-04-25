@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/gestion_wallet/date_header/date_header_widget.dart';
 import '/gestion_wallet/swipeable_transaction/swipeable_transaction_widget.dart';
-import '/gestion_wallet/text_field2/text_field2_widget.dart';
+import '/gestion_wallet/text_field/text_field_widget.dart';
 import 'g_e_s_t_i_o_n_w_a_l_l_e_t_transaction_history_widget.dart'
     show GESTIONWALLETTransactionHistoryWidget;
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ class GESTIONWALLETTransactionHistoryModel
   ///  State fields for stateful widgets in this page.
 
   // Model for TextField.
-  late TextField2Model textFieldModel;
+  late TextFieldModel textFieldModel;
   // Model for DateHeader.
   late DateHeaderModel dateHeaderModel1;
   // Model for SwipeableTransaction.
@@ -37,7 +37,7 @@ class GESTIONWALLETTransactionHistoryModel
 
   @override
   void initState(BuildContext context) {
-    textFieldModel = createModel(context, () => TextField2Model());
+    textFieldModel = createModel(context, () => TextFieldModel());
     dateHeaderModel1 = createModel(context, () => DateHeaderModel());
     swipeableTransactionModel1 =
         createModel(context, () => SwipeableTransactionModel());

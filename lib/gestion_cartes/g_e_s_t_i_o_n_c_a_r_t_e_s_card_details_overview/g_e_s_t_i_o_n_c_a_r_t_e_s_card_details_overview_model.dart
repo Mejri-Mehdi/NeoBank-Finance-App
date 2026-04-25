@@ -1,5 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/gestion_cartes/button/button_widget.dart';
+import '/gestion_cartes/button5/button5_widget.dart';
 import '/gestion_cartes/card_transaction/card_transaction_widget.dart';
 import '/gestion_cartes/spending_limit_indicator/spending_limit_indicator_widget.dart';
 import 'g_e_s_t_i_o_n_c_a_r_t_e_s_card_details_overview_widget.dart'
@@ -13,9 +13,9 @@ class GESTIONCARTESCardDetailsOverviewModel
   // Model for SpendingLimitIndicator.
   late SpendingLimitIndicatorModel spendingLimitIndicatorModel;
   // Model for Button.
-  late ButtonModel buttonModel1;
+  late Button5Model buttonModel1;
   // Model for Button.
-  late ButtonModel buttonModel2;
+  late Button5Model buttonModel2;
   // Model for CardTransaction.
   late CardTransactionModel cardTransactionModel1;
   // Model for CardTransaction.
@@ -31,8 +31,8 @@ class GESTIONCARTESCardDetailsOverviewModel
   void initState(BuildContext context) {
     spendingLimitIndicatorModel =
         createModel(context, () => SpendingLimitIndicatorModel());
-    buttonModel1 = createModel(context, () => ButtonModel());
-    buttonModel2 = createModel(context, () => ButtonModel());
+    buttonModel1 = createModel(context, () => Button5Model());
+    buttonModel2 = createModel(context, () => Button5Model());
     cardTransactionModel1 = createModel(context, () => CardTransactionModel());
     cardTransactionModel2 = createModel(context, () => CardTransactionModel());
     cardTransactionModel3 = createModel(context, () => CardTransactionModel());
