@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -25,7 +26,12 @@ export 'paramtresdela_carte_update_card_limits_status_model.dart';
 /// "Enregistrer les modifications". The overall design should feel secure,
 /// clean, minimalist, and professional.
 class ParamtresdelaCarteUpdateCardLimitsStatusWidget extends StatefulWidget {
-  const ParamtresdelaCarteUpdateCardLimitsStatusWidget({super.key});
+  const ParamtresdelaCarteUpdateCardLimitsStatusWidget({
+    super.key,
+    required this.cardToEdit,
+  });
+
+  final CardsRecord? cardToEdit;
 
   static String routeName = 'ParamtresdelaCarteUpdateCardLimitsStatus';
   static String routePath = '/paramtresdelaCarteUpdateCardLimitsStatus';
@@ -47,7 +53,8 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
     _model = createModel(
         context, () => ParamtresdelaCarteUpdateCardLimitsStatusModel());
 
-    _model.switchValue1 = false;
+    _model.switchValue1 =
+        !((widget.cardToEdit!.hasStatus() ? false : false) ? false : true);
     _model.switchValue2 = true;
     _model.switchValue3 = true;
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -82,8 +89,8 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
               color: Color(0xFF1A1A2E),
               size: 22.0,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              context.safePop();
             },
           ),
           title: Padding(
@@ -232,7 +239,11 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                                         ),
                                                   ),
                                                   Text(
-                                                    'Visa Platinum',
+                                                    valueOrDefault<String>(
+                                                      widget.cardToEdit
+                                                          ?.cardNetwork,
+                                                      'Visa Platinum',
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .titleMedium
@@ -283,7 +294,11 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                                     padding:
                                                         EdgeInsets.all(6.0),
                                                     child: Text(
-                                                      'VISA',
+                                                      valueOrDefault<String>(
+                                                        widget.cardToEdit
+                                                            ?.cardNetwork,
+                                                        'VISA',
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .labelSmall
@@ -327,7 +342,11 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                                   .fromSTEB(
                                                       20.0, 0.0, 0.0, 0.0),
                                               child: Text(
-                                                '•••• •••• •••• 4872',
+                                                valueOrDefault<String>(
+                                                  widget
+                                                      .cardToEdit?.cardNumber,
+                                                  '•••• •••• •••• 4872',
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .labelSmall
@@ -410,7 +429,12 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                                               ),
                                                         ),
                                                         Text(
-                                                          'Ahmed Ben Ali',
+                                                          valueOrDefault<
+                                                              String>(
+                                                            widget.cardToEdit
+                                                                ?.cardHolderName,
+                                                            'Mehdi Mejri',
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelSmall
@@ -489,7 +513,12 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                                               ),
                                                         ),
                                                         Text(
-                                                          '09/28',
+                                                          valueOrDefault<
+                                                              String>(
+                                                            widget.cardToEdit
+                                                                ?.expiryDate,
+                                                            '09/28',
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelSmall
@@ -785,35 +814,57 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                                 ],
                                               ),
                                             ),
-                                            Container(
-                                              width: 90.0,
-                                              height: 36.0,
-                                              decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    Color(0xFF6C3DE1),
-                                                    Color(0xFF9B59B6)
-                                                  ],
-                                                  stops: [0.0, 1.0],
-                                                  begin: AlignmentDirectional(
-                                                      1.0, 1.0),
-                                                  end: AlignmentDirectional(
-                                                      -1.0, -1.0),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 10.0, 0.0),
+                                              child: Container(
+                                                width: 90.0,
+                                                height: 36.0,
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [
+                                                      Color(0xFF6C3DE1),
+                                                      Color(0xFF9B59B6)
+                                                    ],
+                                                    stops: [0.0, 1.0],
+                                                    begin: AlignmentDirectional(
+                                                        1.0, 1.0),
+                                                    end: AlignmentDirectional(
+                                                        -1.0, -1.0),
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10.0),
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                              ),
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Text(
-                                                  '500 TND',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        font: GoogleFonts
-                                                            .plusJakartaSans(
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Text(
+                                                    valueOrDefault<String>(
+                                                      widget.cardToEdit
+                                                          ?.dailyLimit
+                                                          .toString(),
+                                                      '500 TND',
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .titleSmall
+                                                        .override(
+                                                          font: GoogleFonts
+                                                              .plusJakartaSans(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                          ),
+                                                          color: Colors.white,
+                                                          fontSize: 13.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                           fontStyle:
@@ -822,17 +873,7 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                                                   .titleSmall
                                                                   .fontStyle,
                                                         ),
-                                                        color: Colors.white,
-                                                        fontSize: 13.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -1182,16 +1223,20 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                           ),
                                         ].divide(SizedBox(width: 12.0)),
                                       ),
-                                      Switch(
-                                        value: _model.switchValue2!,
-                                        onChanged: (newValue) async {
-                                          safeSetState(() =>
-                                              _model.switchValue2 = newValue);
-                                        },
-                                        activeThumbColor: Color(0xFF6C3DE1),
-                                        activeTrackColor: Color(0xFFB388FF),
-                                        inactiveTrackColor: Color(0xFFE0E0E0),
-                                        inactiveThumbColor: Color(0xFFBDBDBD),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 2.0, 0.0),
+                                        child: Switch(
+                                          value: _model.switchValue2!,
+                                          onChanged: (newValue) async {
+                                            safeSetState(() => _model
+                                                .switchValue2 = newValue);
+                                          },
+                                          activeThumbColor: Color(0xFF6C3DE1),
+                                          activeTrackColor: Color(0xFFB388FF),
+                                          inactiveTrackColor: Color(0xFFE0E0E0),
+                                          inactiveThumbColor: Color(0xFFBDBDBD),
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -1246,16 +1291,20 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                           ),
                                         ].divide(SizedBox(width: 12.0)),
                                       ),
-                                      Switch(
-                                        value: _model.switchValue3!,
-                                        onChanged: (newValue) async {
-                                          safeSetState(() =>
-                                              _model.switchValue3 = newValue);
-                                        },
-                                        activeThumbColor: Color(0xFF6C3DE1),
-                                        activeTrackColor: Color(0xFFB388FF),
-                                        inactiveTrackColor: Color(0xFFE0E0E0),
-                                        inactiveThumbColor: Color(0xFFBDBDBD),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 2.0, 0.0),
+                                        child: Switch(
+                                          value: _model.switchValue3!,
+                                          onChanged: (newValue) async {
+                                            safeSetState(() => _model
+                                                .switchValue3 = newValue);
+                                          },
+                                          activeThumbColor: Color(0xFF6C3DE1),
+                                          activeTrackColor: Color(0xFFB388FF),
+                                          inactiveTrackColor: Color(0xFFE0E0E0),
+                                          inactiveThumbColor: Color(0xFFBDBDBD),
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -1275,8 +1324,11 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                 padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 16.0),
                 child: Container(
                   child: FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      await widget.cardToEdit!.reference
+                          .update(createCardsRecordData(
+                        status: _model.switchValue1?.toString(),
+                      ));
                     },
                     text: 'Enregistrer les modifications',
                     options: FFButtonOptions(

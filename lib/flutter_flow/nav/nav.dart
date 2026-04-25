@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -211,8 +212,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: ParamtresdelaCarteUpdateCardLimitsStatusWidget.routeName,
           path: ParamtresdelaCarteUpdateCardLimitsStatusWidget.routePath,
+          asyncParams: {
+            'cardToEdit': getDoc(['cards'], CardsRecord.fromSnapshot),
+          },
           builder: (context, params) =>
-              ParamtresdelaCarteUpdateCardLimitsStatusWidget(),
+              ParamtresdelaCarteUpdateCardLimitsStatusWidget(
+            cardToEdit: params.getParam(
+              'cardToEdit',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

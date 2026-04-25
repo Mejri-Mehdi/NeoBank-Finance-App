@@ -15,73 +15,73 @@ class CardsRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "card_name" field.
-  String? _cardName;
-  String get cardName => _cardName ?? '';
-  bool hasCardName() => _cardName != null;
-
-  // "network_type" field.
-  String? _networkType;
-  String get networkType => _networkType ?? '';
-  bool hasNetworkType() => _networkType != null;
-
-  // "spending_limit" field.
-  double? _spendingLimit;
-  double get spendingLimit => _spendingLimit ?? 0.0;
-  bool hasSpendingLimit() => _spendingLimit != null;
-
-  // "period" field.
-  String? _period;
-  String get period => _period ?? '';
-  bool hasPeriod() => _period != null;
-
-  // "created_at" field.
-  DateTime? _createdAt;
-  DateTime? get createdAt => _createdAt;
-  bool hasCreatedAt() => _createdAt != null;
+  // "user_ref" field.
+  DocumentReference? _userRef;
+  DocumentReference? get userRef => _userRef;
+  bool hasUserRef() => _userRef != null;
 
   // "card_number" field.
   String? _cardNumber;
   String get cardNumber => _cardNumber ?? '';
   bool hasCardNumber() => _cardNumber != null;
 
+  // "card_holder_name" field.
+  String? _cardHolderName;
+  String get cardHolderName => _cardHolderName ?? '';
+  bool hasCardHolderName() => _cardHolderName != null;
+
   // "expiry_date" field.
   String? _expiryDate;
   String get expiryDate => _expiryDate ?? '';
   bool hasExpiryDate() => _expiryDate != null;
 
-  // "user_ref" field.
-  DocumentReference? _userRef;
-  DocumentReference? get userRef => _userRef;
-  bool hasUserRef() => _userRef != null;
+  // "cvv" field.
+  String? _cvv;
+  String get cvv => _cvv ?? '';
+  bool hasCvv() => _cvv != null;
 
-  // "limit_period" field.
-  String? _limitPeriod;
-  String get limitPeriod => _limitPeriod ?? '';
-  bool hasLimitPeriod() => _limitPeriod != null;
+  // "card_network" field.
+  String? _cardNetwork;
+  String get cardNetwork => _cardNetwork ?? '';
+  bool hasCardNetwork() => _cardNetwork != null;
 
-  // "last_four_digits" field.
-  String? _lastFourDigits;
-  String get lastFourDigits => _lastFourDigits ?? '';
-  bool hasLastFourDigits() => _lastFourDigits != null;
+  // "balance" field.
+  double? _balance;
+  double get balance => _balance ?? 0.0;
+  bool hasBalance() => _balance != null;
 
-  // "is_frozen" field.
-  bool? _isFrozen;
-  bool get isFrozen => _isFrozen ?? false;
-  bool hasIsFrozen() => _isFrozen != null;
+  // "currency" field.
+  String? _currency;
+  String get currency => _currency ?? '';
+  bool hasCurrency() => _currency != null;
+
+  // "status" field.
+  String? _status;
+  String get status => _status ?? '';
+  bool hasStatus() => _status != null;
+
+  // "daily_limit" field.
+  double? _dailyLimit;
+  double get dailyLimit => _dailyLimit ?? 0.0;
+  bool hasDailyLimit() => _dailyLimit != null;
+
+  // "created_at" field.
+  DateTime? _createdAt;
+  DateTime? get createdAt => _createdAt;
+  bool hasCreatedAt() => _createdAt != null;
 
   void _initializeFields() {
-    _cardName = snapshotData['card_name'] as String?;
-    _networkType = snapshotData['network_type'] as String?;
-    _spendingLimit = castToType<double>(snapshotData['spending_limit']);
-    _period = snapshotData['period'] as String?;
-    _createdAt = snapshotData['created_at'] as DateTime?;
-    _cardNumber = snapshotData['card_number'] as String?;
-    _expiryDate = snapshotData['expiry_date'] as String?;
     _userRef = snapshotData['user_ref'] as DocumentReference?;
-    _limitPeriod = snapshotData['limit_period'] as String?;
-    _lastFourDigits = snapshotData['last_four_digits'] as String?;
-    _isFrozen = snapshotData['is_frozen'] as bool?;
+    _cardNumber = snapshotData['card_number'] as String?;
+    _cardHolderName = snapshotData['card_holder_name'] as String?;
+    _expiryDate = snapshotData['expiry_date'] as String?;
+    _cvv = snapshotData['cvv'] as String?;
+    _cardNetwork = snapshotData['card_network'] as String?;
+    _balance = castToType<double>(snapshotData['balance']);
+    _currency = snapshotData['currency'] as String?;
+    _status = snapshotData['status'] as String?;
+    _dailyLimit = castToType<double>(snapshotData['daily_limit']);
+    _createdAt = snapshotData['created_at'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -118,31 +118,31 @@ class CardsRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createCardsRecordData({
-  String? cardName,
-  String? networkType,
-  double? spendingLimit,
-  String? period,
-  DateTime? createdAt,
-  String? cardNumber,
-  String? expiryDate,
   DocumentReference? userRef,
-  String? limitPeriod,
-  String? lastFourDigits,
-  bool? isFrozen,
+  String? cardNumber,
+  String? cardHolderName,
+  String? expiryDate,
+  String? cvv,
+  String? cardNetwork,
+  double? balance,
+  String? currency,
+  String? status,
+  double? dailyLimit,
+  DateTime? createdAt,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'card_name': cardName,
-      'network_type': networkType,
-      'spending_limit': spendingLimit,
-      'period': period,
-      'created_at': createdAt,
-      'card_number': cardNumber,
-      'expiry_date': expiryDate,
       'user_ref': userRef,
-      'limit_period': limitPeriod,
-      'last_four_digits': lastFourDigits,
-      'is_frozen': isFrozen,
+      'card_number': cardNumber,
+      'card_holder_name': cardHolderName,
+      'expiry_date': expiryDate,
+      'cvv': cvv,
+      'card_network': cardNetwork,
+      'balance': balance,
+      'currency': currency,
+      'status': status,
+      'daily_limit': dailyLimit,
+      'created_at': createdAt,
     }.withoutNulls,
   );
 
@@ -154,32 +154,32 @@ class CardsRecordDocumentEquality implements Equality<CardsRecord> {
 
   @override
   bool equals(CardsRecord? e1, CardsRecord? e2) {
-    return e1?.cardName == e2?.cardName &&
-        e1?.networkType == e2?.networkType &&
-        e1?.spendingLimit == e2?.spendingLimit &&
-        e1?.period == e2?.period &&
-        e1?.createdAt == e2?.createdAt &&
+    return e1?.userRef == e2?.userRef &&
         e1?.cardNumber == e2?.cardNumber &&
+        e1?.cardHolderName == e2?.cardHolderName &&
         e1?.expiryDate == e2?.expiryDate &&
-        e1?.userRef == e2?.userRef &&
-        e1?.limitPeriod == e2?.limitPeriod &&
-        e1?.lastFourDigits == e2?.lastFourDigits &&
-        e1?.isFrozen == e2?.isFrozen;
+        e1?.cvv == e2?.cvv &&
+        e1?.cardNetwork == e2?.cardNetwork &&
+        e1?.balance == e2?.balance &&
+        e1?.currency == e2?.currency &&
+        e1?.status == e2?.status &&
+        e1?.dailyLimit == e2?.dailyLimit &&
+        e1?.createdAt == e2?.createdAt;
   }
 
   @override
   int hash(CardsRecord? e) => const ListEquality().hash([
-        e?.cardName,
-        e?.networkType,
-        e?.spendingLimit,
-        e?.period,
-        e?.createdAt,
-        e?.cardNumber,
-        e?.expiryDate,
         e?.userRef,
-        e?.limitPeriod,
-        e?.lastFourDigits,
-        e?.isFrozen
+        e?.cardNumber,
+        e?.cardHolderName,
+        e?.expiryDate,
+        e?.cvv,
+        e?.cardNetwork,
+        e?.balance,
+        e?.currency,
+        e?.status,
+        e?.dailyLimit,
+        e?.createdAt
       ]);
 
   @override

@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'the_main_mes_cartes_dashboard_view_cards_transactions_widget.dart'
     show TheMainMesCartesDashboardViewCardsTransactionsWidget;
 import 'package:flutter/material.dart';
