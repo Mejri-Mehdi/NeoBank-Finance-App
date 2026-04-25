@@ -120,19 +120,20 @@ class _BASEInvestmentsSavingsGoalsWidgetState
                         decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  38.0, 0.0, 0.0, 0.0),
+                                  30.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
                                     'Investments',
+                                    textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
@@ -156,6 +157,7 @@ class _BASEInvestmentsSavingsGoalsWidgetState
                                   ),
                                   Text(
                                     'Growing your wealth',
+                                    textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -192,7 +194,7 @@ class _BASEInvestmentsSavingsGoalsWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                       child: FlutterFlowIconButton(
                         borderRadius: 9999.0,
                         buttonSize: 40.0,

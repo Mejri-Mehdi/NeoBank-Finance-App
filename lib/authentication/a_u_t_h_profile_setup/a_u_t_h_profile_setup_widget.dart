@@ -1,6 +1,8 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/authentication/button7/button7_widget.dart';
 import '/authentication/goal_selection_item/goal_selection_item_widget.dart';
 import '/authentication/text_field7/text_field7_widget.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -415,24 +417,38 @@ class _AUTHProfileSetupWidgetState extends State<AUTHProfileSetupWidget> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            wrapWithModel(
-                              model: _model.buttonModel,
-                              updateCallback: () => safeSetState(() {}),
-                              child: Button7Widget(
-                                content: 'Complete Setup',
-                                icon: Icon(
-                                  Icons.arrow_forward_rounded,
-                                  color: FlutterFlowTheme.of(context).onPrimary,
-                                  size: 16.0,
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await currentUserReference!
+                                    .update(createUsersRecordData(
+                                  displayName: _model
+                                      .textFieldModel.inputTextController.text,
+                                ));
+                              },
+                              child: wrapWithModel(
+                                model: _model.buttonModel,
+                                updateCallback: () => safeSetState(() {}),
+                                child: Button7Widget(
+                                  content: 'Complete Setup',
+                                  icon: Icon(
+                                    Icons.arrow_forward_rounded,
+                                    color:
+                                        FlutterFlowTheme.of(context).onPrimary,
+                                    size: 16.0,
+                                  ),
+                                  icon_present: true,
+                                  icon_end_present: false,
+                                  variant: 'primary',
+                                  size: 'large',
+                                  full_width: true,
+                                  loading: false,
+                                  disabled: false,
+                                  expanded: true,
                                 ),
-                                icon_present: true,
-                                icon_end_present: false,
-                                variant: 'primary',
-                                size: 'large',
-                                full_width: true,
-                                loading: false,
-                                disabled: false,
-                                expanded: true,
                               ),
                             ),
                           ],

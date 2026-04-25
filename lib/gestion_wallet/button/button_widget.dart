@@ -213,7 +213,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                     ))
                       widget.icon!,
                     Text(
-                      'Create Group',
+                      'Add New Card',
                       maxLines: 1,
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             font: GoogleFonts.inter(

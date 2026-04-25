@@ -105,6 +105,8 @@ class _GESTIONCARTESCardDetailsOverviewWidgetState
                                         .titleMedium
                                         .fontStyle,
                                   ),
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   fontStyle: FlutterFlowTheme.of(context)
@@ -148,6 +150,7 @@ class _GESTIONCARTESCardDetailsOverviewWidgetState
                                       ) ??
                                       false;
                               await widget.cardDetails!.reference.delete();
+                              context.safePop();
                             },
                           ),
                         ],
@@ -598,24 +601,37 @@ class _GESTIONCARTESCardDetailsOverviewWidgetState
                       children: [
                         Expanded(
                           flex: 1,
-                          child: wrapWithModel(
-                            model: _model.buttonModel1,
-                            updateCallback: () => safeSetState(() {}),
-                            child: Button5Widget(
-                              content: 'Freeze',
-                              icon: Icon(
-                                Icons.lock_outline_rounded,
-                                color: FlutterFlowTheme.of(context).onSecondary,
-                                size: 16.0,
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await widget.cardDetails!.reference
+                                  .update(createCardsRecordData(
+                                isFrozen: true,
+                              ));
+                            },
+                            child: wrapWithModel(
+                              model: _model.buttonModel1,
+                              updateCallback: () => safeSetState(() {}),
+                              child: Button5Widget(
+                                content: 'Freeze',
+                                icon: Icon(
+                                  Icons.lock_outline_rounded,
+                                  color:
+                                      FlutterFlowTheme.of(context).onSecondary,
+                                  size: 16.0,
+                                ),
+                                icon_present: true,
+                                icon_end_present: false,
+                                variant: 'secondary',
+                                size: 'medium',
+                                full_width: true,
+                                loading: false,
+                                disabled: false,
+                                expanded: true,
                               ),
-                              icon_present: true,
-                              icon_end_present: false,
-                              variant: 'secondary',
-                              size: 'medium',
-                              full_width: true,
-                              loading: false,
-                              disabled: false,
-                              expanded: true,
                             ),
                           ),
                         ),

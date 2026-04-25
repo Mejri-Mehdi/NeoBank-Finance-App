@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'b_a_s_e_general_settings_model.dart';
@@ -671,24 +672,33 @@ class _BASEGeneralSettingsWidgetState extends State<BASEGeneralSettingsWidget> {
                             0.0, 32.0, 0.0, 24.0),
                         child: Container(
                           child: Container(
-                            child: wrapWithModel(
-                              model: _model.buttonModel,
-                              updateCallback: () => safeSetState(() {}),
-                              child: Button8Widget(
-                                content: 'Sign Out',
-                                icon: Icon(
-                                  Icons.logout_rounded,
-                                  color: FlutterFlowTheme.of(context).onError,
-                                  size: 16.0,
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(AUTHLoginWidget.routeName);
+                              },
+                              child: wrapWithModel(
+                                model: _model.buttonModel,
+                                updateCallback: () => safeSetState(() {}),
+                                child: Button8Widget(
+                                  content: 'Sign Out',
+                                  icon: Icon(
+                                    Icons.logout_rounded,
+                                    color: FlutterFlowTheme.of(context).onError,
+                                    size: 16.0,
+                                  ),
+                                  icon_present: true,
+                                  icon_end_present: false,
+                                  variant: 'destructive',
+                                  size: 'medium',
+                                  full_width: true,
+                                  loading: false,
+                                  disabled: false,
+                                  expanded: true,
                                 ),
-                                icon_present: true,
-                                icon_end_present: false,
-                                variant: 'destructive',
-                                size: 'medium',
-                                full_width: true,
-                                loading: false,
-                                disabled: false,
-                                expanded: true,
                               ),
                             ),
                           ),

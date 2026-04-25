@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -6,7 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/gestion_cartes/button5/button5_widget.dart';
-import '/gestion_cartes/text_field5/text_field5_widget.dart';
+import '/gestion_cartes/text_field5t/text_field5t_widget.dart';
 import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -499,7 +498,56 @@ class _GESTIONCARTESAddNewCardWidgetState
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Card Name',
+                                'Card Holder Name',
+                                style: FlutterFlowTheme.of(context)
+                                    .labelLarge
+                                    .override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                      lineHeight: 1.33,
+                                    ),
+                              ),
+                              wrapWithModel(
+                                model: _model.textField1Model,
+                                updateCallback: () => safeSetState(() {}),
+                                child: TextField5tWidget(
+                                  label: false,
+                                  helper: false,
+                                  hint: 'e.g. Jhon Snow',
+                                  value: '',
+                                  leading_icon: Icon(
+                                    Icons.credit_card_rounded,
+                                  ),
+                                  leading_icon_present: true,
+                                  trailing_icon_present: false,
+                                  variant: 'outlined',
+                                  error: false,
+                                ),
+                              ),
+                            ].divide(SizedBox(height: 8.0)),
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Card Number',
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
@@ -526,10 +574,10 @@ class _GESTIONCARTESAddNewCardWidgetState
                               wrapWithModel(
                                 model: _model.textFieldModel1,
                                 updateCallback: () => safeSetState(() {}),
-                                child: TextField5Widget(
+                                child: TextField5tWidget(
                                   label: false,
                                   helper: false,
-                                  hint: 'e.g. Personal Spending',
+                                  hint: 'e.g. 1234567',
                                   value: '',
                                   leading_icon: Icon(
                                     Icons.credit_card_rounded,
@@ -547,6 +595,108 @@ class _GESTIONCARTESAddNewCardWidgetState
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              Text(
+                                'Expiration Data',
+                                style: FlutterFlowTheme.of(context)
+                                    .labelLarge
+                                    .override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .fontStyle,
+                                      lineHeight: 1.33,
+                                    ),
+                              ),
+                              wrapWithModel(
+                                model: _model.textFieldModel2,
+                                updateCallback: () => safeSetState(() {}),
+                                child: TextField5tWidget(
+                                  label: false,
+                                  helper: false,
+                                  hint: 'e.g. 1/1/2029',
+                                  value: '',
+                                  leading_icon: Icon(
+                                    Icons.credit_card_rounded,
+                                  ),
+                                  leading_icon_present: true,
+                                  trailing_icon_present: false,
+                                  variant: 'outlined',
+                                  error: false,
+                                ),
+                              ),
+                            ].divide(SizedBox(height: 8.0)),
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Last 4 Digits',
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontStyle,
+                                          lineHeight: 1.33,
+                                        ),
+                                  ),
+                                  wrapWithModel(
+                                    model: _model.textFieldModel3,
+                                    updateCallback: () => safeSetState(() {}),
+                                    child: TextField5tWidget(
+                                      label: false,
+                                      helper: false,
+                                      hint: 'e.g. 1234',
+                                      value: '',
+                                      leading_icon: Icon(
+                                        Icons.credit_card_rounded,
+                                      ),
+                                      leading_icon_present: true,
+                                      trailing_icon_present: false,
+                                      variant: 'outlined',
+                                      error: false,
+                                    ),
+                                  ),
+                                ].divide(SizedBox(height: 8.0)),
+                              ),
                               Text(
                                 'Network Type',
                                 style: FlutterFlowTheme.of(context)
@@ -583,11 +733,13 @@ class _GESTIONCARTESAddNewCardWidgetState
                                   options: [
                                     'Visa',
                                     'Mastercard',
-                                    'American Express'
+                                    'CIB',
+                                    'Poste',
+                                    'International'
                                   ],
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropdownValue1 = val),
-                                  width: 200.0,
+                                  width: 305.49,
                                   height: 40.0,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -630,69 +782,6 @@ class _GESTIONCARTESAddNewCardWidgetState
                                   isOverButton: false,
                                   isSearchable: false,
                                   isMultiSelect: false,
-                                ),
-                              ),
-                            ].divide(SizedBox(height: 8.0)),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                flex: 2,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Spending Limit',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            font: GoogleFonts.inter(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelLarge
-                                                      .fontStyle,
-                                            ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLarge
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLarge
-                                                    .fontStyle,
-                                            lineHeight: 1.33,
-                                          ),
-                                    ),
-                                    wrapWithModel(
-                                      model: _model.textFieldModel2,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: TextField5Widget(
-                                        label: false,
-                                        helper: false,
-                                        hint: '0.00',
-                                        value: '',
-                                        leading_icon: Icon(
-                                          Icons.attach_money_rounded,
-                                        ),
-                                        leading_icon_present: true,
-                                        trailing_icon_present: false,
-                                        variant: 'outlined',
-                                        error: false,
-                                      ),
-                                    ),
-                                  ].divide(SizedBox(height: 8.0)),
                                 ),
                               ),
                               Expanded(
@@ -746,7 +835,7 @@ class _GESTIONCARTESAddNewCardWidgetState
                                         ],
                                         onChanged: (val) => safeSetState(
                                             () => _model.dropdownValue2 = val),
-                                        width: 200.0,
+                                        width: 307.5,
                                         height: 40.0,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -795,10 +884,74 @@ class _GESTIONCARTESAddNewCardWidgetState
                                         isMultiSelect: false,
                                       ),
                                     ),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Spending Limit',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                  lineHeight: 1.33,
+                                                ),
+                                          ),
+                                          wrapWithModel(
+                                            model: _model.textFieldModel4,
+                                            updateCallback: () =>
+                                                safeSetState(() {}),
+                                            child: TextField5tWidget(
+                                              label: false,
+                                              helper: false,
+                                              hint: '0.00',
+                                              value: '',
+                                              leading_icon: Icon(
+                                                Icons.attach_money_rounded,
+                                              ),
+                                              leading_icon_present: true,
+                                              trailing_icon_present: false,
+                                              variant: 'outlined',
+                                              error: false,
+                                            ),
+                                          ),
+                                        ].divide(SizedBox(height: 8.0)),
+                                      ),
+                                    ),
                                   ].divide(SizedBox(height: 8.0)),
                                 ),
                               ),
-                            ].divide(SizedBox(width: 16.0)),
+                            ].divide(SizedBox(height: 8.0)),
                           ),
                         ].divide(SizedBox(height: 24.0)),
                       ),
@@ -815,13 +968,19 @@ class _GESTIONCARTESAddNewCardWidgetState
                               .doc()
                               .set(createCardsRecordData(
                                 cardName: _model
-                                    .textFieldModel1.inputTextController.text,
+                                    .textField1Model.inputTextController.text,
                                 networkType: _model.dropdownValue1,
                                 spendingLimit: double.tryParse(_model
-                                    .textFieldModel2.inputTextController.text),
+                                    .textFieldModel4.inputTextController.text),
                                 period: _model.dropdownValue2,
-                                createdAt: getCurrentTimestamp,
-                                userRef: currentUserReference,
+                                cardNumber: _model
+                                    .textFieldModel1.inputTextController.text,
+                                lastFourDigits: (_model.textFieldModel3
+                                            .inputFocusNode?.hasFocus ??
+                                        false)
+                                    .toString(),
+                                expiryDate: _model
+                                    .textFieldModel2.inputTextController.text,
                               ));
                         },
                         child: wrapWithModel(

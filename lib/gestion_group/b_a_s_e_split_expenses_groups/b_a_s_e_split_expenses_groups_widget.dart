@@ -92,26 +92,31 @@ class _BASESplitExpensesGroupsWidgetState
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
-                        child: FlutterFlowIconButton(
-                          borderRadius: 12.0,
-                          buttonSize: 40.0,
-                          fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          icon: Icon(
-                            Icons.arrow_back_rounded,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24.0,
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                20.0, 0.0, 0.0, 0.0),
+                            child: FlutterFlowIconButton(
+                              borderRadius: 12.0,
+                              buttonSize: 40.0,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              icon: Icon(
+                                Icons.arrow_back_rounded,
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                size: 24.0,
+                              ),
+                              onPressed: () async {
+                                context.safePop();
+                              },
+                            ),
                           ),
-                          onPressed: () async {
-                            context.safePop();
-                          },
                         ),
-                      ),
+                      ],
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -125,12 +130,12 @@ class _BASESplitExpensesGroupsWidgetState
                           children: [
                             Column(
                               mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      36.0, 0.0, 0.0, 0.0),
+                                      25.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Split & Groups',
                                     style: FlutterFlowTheme.of(context)
@@ -157,7 +162,7 @@ class _BASESplitExpensesGroupsWidgetState
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      36.0, 0.0, 0.0, 0.0),
+                                      25.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Manage shared expenses',
                                     style: FlutterFlowTheme.of(context)
@@ -196,7 +201,7 @@ class _BASESplitExpensesGroupsWidgetState
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 0.0, 0.0),
                       child: FlutterFlowIconButton(
                         borderColor: FlutterFlowTheme.of(context).alternate,
                         borderRadius: 9999.0,

@@ -153,7 +153,7 @@ class _BASEGlobalWalletDashboardWidgetState
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              130.0, 0.0, 0.0, 0.0),
+                              100.0, 0.0, 0.0, 0.0),
                           child: FlutterFlowIconButton(
                             borderRadius: 8.0,
                             buttonSize: 40.0,

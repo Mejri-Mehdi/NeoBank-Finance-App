@@ -55,6 +55,21 @@ class CardsRecord extends FirestoreRecord {
   DocumentReference? get userRef => _userRef;
   bool hasUserRef() => _userRef != null;
 
+  // "limit_period" field.
+  String? _limitPeriod;
+  String get limitPeriod => _limitPeriod ?? '';
+  bool hasLimitPeriod() => _limitPeriod != null;
+
+  // "last_four_digits" field.
+  String? _lastFourDigits;
+  String get lastFourDigits => _lastFourDigits ?? '';
+  bool hasLastFourDigits() => _lastFourDigits != null;
+
+  // "is_frozen" field.
+  bool? _isFrozen;
+  bool get isFrozen => _isFrozen ?? false;
+  bool hasIsFrozen() => _isFrozen != null;
+
   void _initializeFields() {
     _cardName = snapshotData['card_name'] as String?;
     _networkType = snapshotData['network_type'] as String?;
@@ -64,6 +79,9 @@ class CardsRecord extends FirestoreRecord {
     _cardNumber = snapshotData['card_number'] as String?;
     _expiryDate = snapshotData['expiry_date'] as String?;
     _userRef = snapshotData['user_ref'] as DocumentReference?;
+    _limitPeriod = snapshotData['limit_period'] as String?;
+    _lastFourDigits = snapshotData['last_four_digits'] as String?;
+    _isFrozen = snapshotData['is_frozen'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -108,6 +126,9 @@ Map<String, dynamic> createCardsRecordData({
   String? cardNumber,
   String? expiryDate,
   DocumentReference? userRef,
+  String? limitPeriod,
+  String? lastFourDigits,
+  bool? isFrozen,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -119,6 +140,9 @@ Map<String, dynamic> createCardsRecordData({
       'card_number': cardNumber,
       'expiry_date': expiryDate,
       'user_ref': userRef,
+      'limit_period': limitPeriod,
+      'last_four_digits': lastFourDigits,
+      'is_frozen': isFrozen,
     }.withoutNulls,
   );
 
@@ -137,7 +161,10 @@ class CardsRecordDocumentEquality implements Equality<CardsRecord> {
         e1?.createdAt == e2?.createdAt &&
         e1?.cardNumber == e2?.cardNumber &&
         e1?.expiryDate == e2?.expiryDate &&
-        e1?.userRef == e2?.userRef;
+        e1?.userRef == e2?.userRef &&
+        e1?.limitPeriod == e2?.limitPeriod &&
+        e1?.lastFourDigits == e2?.lastFourDigits &&
+        e1?.isFrozen == e2?.isFrozen;
   }
 
   @override
@@ -149,7 +176,10 @@ class CardsRecordDocumentEquality implements Equality<CardsRecord> {
         e?.createdAt,
         e?.cardNumber,
         e?.expiryDate,
-        e?.userRef
+        e?.userRef,
+        e?.limitPeriod,
+        e?.lastFourDigits,
+        e?.isFrozen
       ]);
 
   @override

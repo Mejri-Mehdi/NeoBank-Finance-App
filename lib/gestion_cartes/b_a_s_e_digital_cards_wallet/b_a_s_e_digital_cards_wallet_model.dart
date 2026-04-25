@@ -11,8 +11,8 @@ class BASEDigitalCardsWalletModel
     extends FlutterFlowModel<BASEDigitalCardsWalletWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Model for Button.
-  late Button5Model buttonModel;
+  // Model for topButton.
+  late Button5Model topButtonModel;
   // Model for CardTransaction.
   late CardTransactionModel cardTransactionModel1;
   // Model for CardTransaction.
@@ -26,7 +26,7 @@ class BASEDigitalCardsWalletModel
 
   @override
   void initState(BuildContext context) {
-    buttonModel = createModel(context, () => Button5Model());
+    topButtonModel = createModel(context, () => Button5Model());
     cardTransactionModel1 = createModel(context, () => CardTransactionModel());
     cardTransactionModel2 = createModel(context, () => CardTransactionModel());
     cardTransactionModel3 = createModel(context, () => CardTransactionModel());
@@ -36,7 +36,7 @@ class BASEDigitalCardsWalletModel
 
   @override
   void dispose() {
-    buttonModel.dispose();
+    topButtonModel.dispose();
     cardTransactionModel1.dispose();
     cardTransactionModel2.dispose();
     cardTransactionModel3.dispose();

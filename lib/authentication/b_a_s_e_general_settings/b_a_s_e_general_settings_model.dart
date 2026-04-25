@@ -3,6 +3,7 @@ import '/authentication/settings_group_header2/settings_group_header2_widget.dar
 import '/authentication/settings_item2/settings_item2_widget.dart';
 import '/authentication/switch_component5/switch_component5_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'b_a_s_e_general_settings_widget.dart' show BASEGeneralSettingsWidget;
 import 'package:flutter/material.dart';
 

@@ -2,11 +2,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'text_field5_model.dart';
-export 'text_field5_model.dart';
+import 'text_field5t_model.dart';
+export 'text_field5t_model.dart';
 
-class TextField5Widget extends StatefulWidget {
-  const TextField5Widget({
+class TextField5tWidget extends StatefulWidget {
+  const TextField5tWidget({
     super.key,
     bool? label,
     bool? helper,
@@ -39,11 +39,11 @@ class TextField5Widget extends StatefulWidget {
   final bool error;
 
   @override
-  State<TextField5Widget> createState() => _TextField5WidgetState();
+  State<TextField5tWidget> createState() => _TextField5tWidgetState();
 }
 
-class _TextField5WidgetState extends State<TextField5Widget> {
-  late TextField5Model _model;
+class _TextField5tWidgetState extends State<TextField5tWidget> {
+  late TextField5tModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -54,7 +54,7 @@ class _TextField5WidgetState extends State<TextField5Widget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TextField5Model());
+    _model = createModel(context, () => TextField5tModel());
 
     _model.inputTextController ??= TextEditingController(text: widget.value);
     _model.inputFocusNode ??= FocusNode();
@@ -248,19 +248,55 @@ class _TextField5WidgetState extends State<TextField5Widget> {
                     widget.leading_icon!,
                   Expanded(
                     flex: 1,
-                    child: TextFormField(
-                      controller: _model.inputTextController,
-                      focusNode: _model.inputFocusNode,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        isDense: true,
-                        hintText: valueOrDefault<String>(
-                          widget.hint,
-                          'e.g. Personal Spending',
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                      child: TextFormField(
+                        controller: _model.inputTextController,
+                        focusNode: _model.inputFocusNode,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          isDense: true,
+                          alignLabelWithHint: false,
+                          hintText: valueOrDefault<String>(
+                            widget.hint,
+                            'e.g. Personal Spending',
+                          ),
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                font: GoogleFonts.inter(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                                color: () {
+                                  if (widget.variant == 'filled') {
+                                    return FlutterFlowTheme.of(context).accent3;
+                                  } else if (widget.variant == 'ghost') {
+                                    return FlutterFlowTheme.of(context).accent3;
+                                  } else {
+                                    return FlutterFlowTheme.of(context).accent3;
+                                  }
+                                }(),
+                                letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
+                                lineHeight: 1.47,
+                              ),
+                          enabledBorder: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          focusedErrorBorder: InputBorder.none,
                         ),
-                        hintStyle: FlutterFlowTheme.of(context)
-                            .bodyMedium
-                            .override(
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
                               font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -271,11 +307,14 @@ class _TextField5WidgetState extends State<TextField5Widget> {
                               ),
                               color: () {
                                 if (widget.variant == 'filled') {
-                                  return FlutterFlowTheme.of(context).accent3;
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryText;
                                 } else if (widget.variant == 'ghost') {
-                                  return FlutterFlowTheme.of(context).accent3;
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryText;
                                 } else {
-                                  return FlutterFlowTheme.of(context).accent3;
+                                  return FlutterFlowTheme.of(context)
+                                      .primaryText;
                                 }
                               }(),
                               letterSpacing: 0.0,
@@ -287,40 +326,9 @@ class _TextField5WidgetState extends State<TextField5Widget> {
                                   .fontStyle,
                               lineHeight: 1.47,
                             ),
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        errorBorder: InputBorder.none,
-                        focusedErrorBorder: InputBorder.none,
+                        validator: _model.inputTextControllerValidator
+                            .asValidator(context),
                       ),
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: () {
-                              if (widget.variant == 'filled') {
-                                return FlutterFlowTheme.of(context).primaryText;
-                              } else if (widget.variant == 'ghost') {
-                                return FlutterFlowTheme.of(context).primaryText;
-                              } else {
-                                return FlutterFlowTheme.of(context).primaryText;
-                              }
-                            }(),
-                            letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                            lineHeight: 1.47,
-                          ),
-                      validator: _model.inputTextControllerValidator
-                          .asValidator(context),
                     ),
                   ),
                   if (valueOrDefault<bool>(

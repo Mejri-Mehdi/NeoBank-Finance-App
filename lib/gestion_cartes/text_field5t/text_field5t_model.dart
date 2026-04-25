@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'text_field5_widget.dart' show TextField5Widget;
+import 'text_field5t_widget.dart' show TextField5tWidget;
 import 'package:flutter/material.dart';
 
-class TextField5Model extends FlutterFlowModel<TextField5Widget> {
+class TextField5tModel extends FlutterFlowModel<TextField5tWidget> {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for Input widget.
