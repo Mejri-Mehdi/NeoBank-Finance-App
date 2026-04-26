@@ -36,8 +36,8 @@ class TransactionsRecord extends FirestoreRecord {
   bool hasType() => _type != null;
 
   // "date" field.
-  DateTime? _date;
-  DateTime? get date => _date;
+  String? _date;
+  String get date => _date ?? '';
   bool hasDate() => _date != null;
 
   void _initializeFields() {
@@ -45,7 +45,7 @@ class TransactionsRecord extends FirestoreRecord {
     _merchantName = snapshotData['merchant_name'] as String?;
     _amount = castToType<double>(snapshotData['amount']);
     _type = snapshotData['type'] as String?;
-    _date = snapshotData['date'] as DateTime?;
+    _date = snapshotData['date'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -87,7 +87,7 @@ Map<String, dynamic> createTransactionsRecordData({
   String? merchantName,
   double? amount,
   String? type,
-  DateTime? date,
+  String? date,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{

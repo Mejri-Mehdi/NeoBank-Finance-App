@@ -1406,13 +1406,10 @@ class _TheMainMesCartesDashboardViewCardsTransactionsWidgetState
                             child: StreamBuilder<List<TransactionsRecord>>(
                               stream: queryTransactionsRecord(
                                 queryBuilder: (transactionsRecord) =>
-                                    transactionsRecord
-                                        .where(
-                                          'card_ref',
-                                          isEqualTo:
-                                              containerCardsRecord?.reference,
-                                        )
-                                        .orderBy('date', descending: true),
+                                    transactionsRecord.where(
+                                  'card_ref',
+                                  isEqualTo: containerCardsRecord?.reference,
+                                ),
                               ),
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
@@ -1448,86 +1445,137 @@ class _TheMainMesCartesDashboardViewCardsTransactionsWidgetState
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
-                                      child: Container(
-                                        width: double.infinity,
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 8.0,
-                                              color: Color(0x0F000000),
-                                              offset: Offset(
-                                                0.0,
-                                                2.0,
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onLongPress: () async {
+                                          var confirmDialogResponse =
+                                              await showDialog<bool>(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title:
+                                                            Text('Supprimer'),
+                                                        content: Text(
+                                                            'Voulez-vous vraiment supprimer cette transaction ?'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    false),
+                                                            child:
+                                                                Text('Cancel'),
+                                                          ),
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    true),
+                                                            child:
+                                                                Text('Confirm'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  ) ??
+                                                  false;
+                                          await listViewTransactionsRecord
+                                              .reference
+                                              .delete();
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Transaction Deleted Successfully',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
                                               ),
-                                            )
-                                          ],
-                                          borderRadius:
-                                              BorderRadius.circular(16.0),
-                                        ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(14.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Container(
-                                                    width: 44.0,
-                                                    height: 44.0,
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xFFF3EEFF),
-                                                      shape: BoxShape.circle,
-                                                    ),
-                                                    child: Align(
-                                                      alignment:
-                                                          AlignmentDirectional(
-                                                              0.0, 0.0),
-                                                      child: Icon(
-                                                        Icons
-                                                            .shopping_bag_rounded,
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                          );
+                                        },
+                                        child: Container(
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 8.0,
+                                                color: Color(0x0F000000),
+                                                offset: Offset(
+                                                  0.0,
+                                                  2.0,
+                                                ),
+                                              )
+                                            ],
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                          ),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(14.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Container(
+                                                      width: 44.0,
+                                                      height: 44.0,
+                                                      decoration: BoxDecoration(
                                                         color:
-                                                            Color(0xFF7C3AED),
-                                                        size: 22.0,
+                                                            Color(0xFFF3EEFF),
+                                                        shape: BoxShape.circle,
+                                                      ),
+                                                      child: Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Icon(
+                                                          Icons
+                                                              .shopping_bag_rounded,
+                                                          color:
+                                                              Color(0xFF7C3AED),
+                                                          size: 22.0,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                  Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          listViewTransactionsRecord
-                                                              .merchantName,
-                                                          'Carrefour Market',
-                                                        ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font:
-                                                                      GoogleFonts
-                                                                          .inter(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  color: Color(
-                                                                      0xFF1A1A2E),
-                                                                  letterSpacing:
-                                                                      0.0,
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            listViewTransactionsRecord
+                                                                .merchantName,
+                                                            'Carrefour Market',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w600,
@@ -1536,31 +1584,56 @@ class _TheMainMesCartesDashboardViewCardsTransactionsWidgetState
                                                                       .bodyMedium
                                                                       .fontStyle,
                                                                 ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
+                                                                color: Color(
+                                                                    0xFF1A1A2E),
+                                                                letterSpacing:
                                                                     0.0,
-                                                                    2.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            dateTimeFormat(
-                                                                "d/M h:mm a",
-                                                                listViewTransactionsRecord
-                                                                    .date),
-                                                            'Aujourd\'hui, 10:32',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelSmall
-                                                              .override(
-                                                                font:
-                                                                    GoogleFonts
-                                                                        .inter(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      2.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              listViewTransactionsRecord
+                                                                  .date,
+                                                              'Aujourd\'hui, 10:32',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelSmall
+                                                                .override(
+                                                                  font:
+                                                                      GoogleFonts
+                                                                          .inter(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelSmall
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: Color(
+                                                                      0xFFAAAAAA),
+                                                                  fontSize:
+                                                                      11.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelSmall
@@ -1570,44 +1643,42 @@ class _TheMainMesCartesDashboardViewCardsTransactionsWidgetState
                                                                       .labelSmall
                                                                       .fontStyle,
                                                                 ),
-                                                                color: Color(
-                                                                    0xFFAAAAAA),
-                                                                fontSize: 11.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .fontStyle,
-                                                              ),
+                                                          ),
                                                         ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ].divide(SizedBox(width: 12.0)),
-                                              ),
-                                              Text(
-                                                valueOrDefault<String>(
-                                                  formatNumber(
-                                                    listViewTransactionsRecord
-                                                        .amount,
-                                                    formatType:
-                                                        FormatType.custom,
-                                                    currency: 'TND  ',
-                                                    format: '- ',
-                                                    locale: '',
-                                                  ),
-                                                  '-45.800 TND',
+                                                      ],
+                                                    ),
+                                                  ].divide(
+                                                      SizedBox(width: 12.0)),
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.inter(
+                                                Text(
+                                                  valueOrDefault<String>(
+                                                    formatNumber(
+                                                      listViewTransactionsRecord
+                                                          .amount,
+                                                      formatType:
+                                                          FormatType.custom,
+                                                      currency: 'TND  ',
+                                                      format: '- ',
+                                                      locale: '',
+                                                    ),
+                                                    '-45.800 TND',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font: GoogleFonts.inter(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color:
+                                                            Color(0xFF1A1A2E),
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
                                                         fontStyle:
@@ -1616,18 +1687,9 @@ class _TheMainMesCartesDashboardViewCardsTransactionsWidgetState
                                                                 .bodyMedium
                                                                 .fontStyle,
                                                       ),
-                                                      color: Color(0xFF1A1A2E),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                              ),
-                                            ],
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -1642,37 +1704,43 @@ class _TheMainMesCartesDashboardViewCardsTransactionsWidgetState
                     ],
                   ),
                 ),
-                FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
-                  text: 'Button',
-                  options: FFButtonOptions(
-                    height: 40.0,
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          font: GoogleFonts.plusJakartaSans(
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontWeight,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .fontStyle,
-                          ),
-                          color: Colors.white,
-                          letterSpacing: 0.0,
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                        ),
-                    elevation: 0.0,
-                    borderRadius: BorderRadius.circular(8.0),
+                Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 40.0, 30.0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      context.pushNamed(AjouteruneTransactionWidget.routeName);
+                    },
+                    text: '+ Add New Transaction',
+                    options: FFButtonOptions(
+                      width: 2000.0,
+                      height: 53.4,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                      iconPadding: EdgeInsets.all(0.0),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                font: GoogleFonts.plusJakartaSans(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
+                                color: Colors.white,
+                                letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
+                              ),
+                      elevation: 0.0,
+                      borderRadius: BorderRadius.circular(24.0),
+                    ),
                   ),
                 ),
               ],

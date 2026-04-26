@@ -1,18 +1,3 @@
 {
-  "indexes": [
-    {
-      "collectionGroup": "transactions",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "card_ref",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "date",
-          "order": "DESCENDING"
-        }
-      ]
-    }
-  ]
+  "indexes": []
 }
