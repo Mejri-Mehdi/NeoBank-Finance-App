@@ -78,14 +78,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
           ? BASEGlobalWalletDashboardWidget()
-          : AUTHOnboardingWidget(),
+          : AUTHOnboarding2Widget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? BASEGlobalWalletDashboardWidget()
-              : AUTHOnboardingWidget(),
+              : AUTHOnboarding2Widget(),
         ),
         FFRoute(
           name: BASEGlobalWalletDashboardWidget.routeName,
@@ -222,6 +222,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.Document,
             ),
           ),
+        ),
+        FFRoute(
+          name: AaWidget.routeName,
+          path: AaWidget.routePath,
+          builder: (context, params) => AaWidget(),
+        ),
+        FFRoute(
+          name: AUTHOnboarding2Widget.routeName,
+          path: AUTHOnboarding2Widget.routePath,
+          builder: (context, params) => AUTHOnboarding2Widget(),
+        ),
+        FFRoute(
+          name: RechargerCarteWidget.routeName,
+          path: RechargerCarteWidget.routePath,
+          builder: (context, params) => RechargerCarteWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -392,7 +407,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/aUTHOnboarding';
+            return '/aUTHOnboarding2';
           }
           return null;
         },

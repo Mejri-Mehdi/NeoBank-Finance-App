@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'paramtresdela_carte_update_card_limits_status_model.dart';
@@ -1190,7 +1191,7 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                             size: 20.0,
                                           ),
                                           Text(
-                                            'Notifications de transaction',
+                                            'Notifications de \ntransaction',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -1225,7 +1226,7 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 2.0, 0.0),
+                                            0.0, 0.0, 4.0, 0.0),
                                         child: Switch(
                                           value: _model.switchValue2!,
                                           onChanged: (newValue) async {
@@ -1293,7 +1294,7 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 2.0, 0.0),
+                                            0.0, 0.0, 4.0, 0.0),
                                         child: Switch(
                                           value: _model.switchValue3!,
                                           onChanged: (newValue) async {
@@ -1329,6 +1330,23 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                           .update(createCardsRecordData(
                         status: _model.switchValue1?.toString(),
                       ));
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Your Card is successfully updated',
+                            style: TextStyle(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                            ),
+                          ),
+                          duration: Duration(milliseconds: 4000),
+                          backgroundColor:
+                              FlutterFlowTheme.of(context).secondary,
+                        ),
+                      );
+
+                      context.pushNamed(
+                          TheMainMesCartesDashboardViewCardsTransactionsWidget
+                              .routeName);
                     },
                     text: 'Enregistrer les modifications',
                     options: FFButtonOptions(

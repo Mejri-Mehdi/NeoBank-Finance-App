@@ -49,3 +49,8 @@ export '/gestion_cartes/ajouterune_carte_form_createa_new_card/ajouterune_carte_
     show AjouteruneCarteFormCreateaNewCardWidget;
 export '/gestion_cartes/paramtresdela_carte_update_card_limits_status/paramtresdela_carte_update_card_limits_status_widget.dart'
     show ParamtresdelaCarteUpdateCardLimitsStatusWidget;
+export '/aa/aa_widget.dart' show AaWidget;
+export '/authentication/a_u_t_h_onboarding2/a_u_t_h_onboarding2_widget.dart'
+    show AUTHOnboarding2Widget;
+export '/gestion_cartes/recharger_carte/recharger_carte_widget.dart'
+    show RechargerCarteWidget;
