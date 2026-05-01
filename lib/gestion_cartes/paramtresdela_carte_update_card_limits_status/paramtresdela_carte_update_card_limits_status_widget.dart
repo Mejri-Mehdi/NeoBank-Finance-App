@@ -54,8 +54,7 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
     _model = createModel(
         context, () => ParamtresdelaCarteUpdateCardLimitsStatusModel());
 
-    _model.switchValue1 =
-        !((widget.cardToEdit!.hasStatus() ? false : false) ? false : true);
+    _model.switchValue1 = false;
     _model.switchValue2 = true;
     _model.switchValue3 = true;
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -626,7 +625,7 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Bloquer la carte',
+                                                'Unlock the card',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
@@ -655,7 +654,7 @@ class _ParamtresdelaCarteUpdateCardLimitsStatusWidgetState
                                                         ),
                                               ),
                                               Text(
-                                                'Suspendre temporairement',
+                                                'Reprise de la carte',
                                                 style: FlutterFlowTheme.of(
                                                         context)
                                                     .bodySmall

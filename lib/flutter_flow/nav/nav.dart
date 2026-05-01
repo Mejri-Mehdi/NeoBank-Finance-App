@@ -249,7 +249,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: AjouteruneTransactionWidget.routeName,
           path: AjouteruneTransactionWidget.routePath,
-          builder: (context, params) => AjouteruneTransactionWidget(),
+          asyncParams: {
+            'cardForTransaction': getDoc(['cards'], CardsRecord.fromSnapshot),
+          },
+          builder: (context, params) => AjouteruneTransactionWidget(
+            cardForTransaction: params.getParam(
+              'cardForTransaction',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

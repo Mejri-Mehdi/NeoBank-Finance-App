@@ -32,7 +32,12 @@ export 'ajouterune_transaction_model.dart';
 /// bottom with a vibrant purple-to-pink gradient, labeled "Ajouter la
 /// transaction".
 class AjouteruneTransactionWidget extends StatefulWidget {
-  const AjouteruneTransactionWidget({super.key});
+  const AjouteruneTransactionWidget({
+    super.key,
+    required this.cardForTransaction,
+  });
+
+  final CardsRecord? cardForTransaction;
 
   static String routeName = 'AjouteruneTransaction';
   static String routePath = '/ajouteruneTransaction';
@@ -797,6 +802,8 @@ class _AjouteruneTransactionWidgetState
                                           _model.textController1.text),
                                       type: _model.dropDownValue,
                                       date: _model.textController3.text,
+                                      cardRef:
+                                          widget.cardForTransaction?.reference,
                                     ));
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(

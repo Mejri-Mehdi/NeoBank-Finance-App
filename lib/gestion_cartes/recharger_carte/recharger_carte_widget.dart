@@ -77,7 +77,7 @@ class _RechargerCarteWidgetState extends State<RechargerCarteWidget> {
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           leading: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 0.0, 0.0),
             child: FlutterFlowIconButton(
               borderColor: Colors.transparent,
               borderRadius: 22.0,
@@ -94,20 +94,24 @@ class _RechargerCarteWidgetState extends State<RechargerCarteWidget> {
               },
             ),
           ),
-          title: Text(
-            'Recharger',
-            style: FlutterFlowTheme.of(context).titleLarge.override(
-                  font: GoogleFonts.inter(
+          title: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+            child: Text(
+              'Recharger',
+              style: FlutterFlowTheme.of(context).titleLarge.override(
+                    font: GoogleFonts.inter(
+                      fontWeight: FontWeight.bold,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                    ),
+                    color: Color(0xFF1A1A2E),
+                    fontSize: 20.0,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.bold,
                     fontStyle:
                         FlutterFlowTheme.of(context).titleLarge.fontStyle,
                   ),
-                  color: Color(0xFF1A1A2E),
-                  fontSize: 20.0,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
-                ),
+            ),
           ),
           actions: [],
           centerTitle: true,
@@ -116,82 +120,116 @@ class _RechargerCarteWidgetState extends State<RechargerCarteWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Montant à ajouter',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.inter(
-                              fontWeight: FontWeight.w500,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .fontStyle,
-                            ),
-                            color: Color(0xFF9E9EB8),
-                            fontSize: 15.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .fontStyle,
-                          ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                      child: Container(
-                        width: double.infinity,
-                        height: 160.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF7F3FF),
-                          borderRadius: BorderRadius.circular(24.0),
-                          border: Border.all(
-                            color: Color(0xFFE8DEFF),
-                            width: 1.5,
-                          ),
+            padding: EdgeInsetsDirectional.fromSTEB(24.0, 40.0, 24.0, 0.0),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 0.0, 24.0, 20.0),
+                        child: Text(
+                          'Montant à ajouter',
+                          textAlign: TextAlign.center,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    color: Color(0xFF9E9EB8),
+                                    fontSize: 15.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                         ),
-                        child: Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Expanded(
-                                    child: Form(
-                                      key: _model.formKey,
-                                      autovalidateMode:
-                                          AutovalidateMode.disabled,
-                                      child: TextFormField(
-                                        controller: _model.textController,
-                                        focusNode: _model.textFieldFocusNode,
-                                        onChanged: (_) => EasyDebounce.debounce(
-                                          '_model.textController',
-                                          Duration(milliseconds: 2000),
-                                          () => safeSetState(() {}),
-                                        ),
-                                        autofocus: false,
-                                        textInputAction: TextInputAction.done,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          isDense: true,
-                                          hintText: '0',
-                                          hintStyle: FlutterFlowTheme.of(
-                                                  context)
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 0.0, 24.0, 0.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 160.0,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFF7F3FF),
+                            borderRadius: BorderRadius.circular(24.0),
+                            border: Border.all(
+                              color: Color(0xFFE8DEFF),
+                              width: 1.5,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(16.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Form(
+                                        key: _model.formKey,
+                                        autovalidateMode:
+                                            AutovalidateMode.disabled,
+                                        child: TextFormField(
+                                          controller: _model.textController,
+                                          focusNode: _model.textFieldFocusNode,
+                                          onChanged: (_) =>
+                                              EasyDebounce.debounce(
+                                            '_model.textController',
+                                            Duration(milliseconds: 2000),
+                                            () => safeSetState(() {}),
+                                          ),
+                                          autofocus: false,
+                                          textInputAction: TextInputAction.done,
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            isDense: true,
+                                            hintText: '0',
+                                            hintStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .displayLarge
+                                                .override(
+                                                  font: GoogleFonts.outfit(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .displayLarge
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Color(0xFFD4C5F9),
+                                                  fontSize: 56.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displayLarge
+                                                          .fontStyle,
+                                                ),
+                                            enabledBorder: InputBorder.none,
+                                            focusedBorder: InputBorder.none,
+                                            errorBorder: InputBorder.none,
+                                            focusedErrorBorder:
+                                                InputBorder.none,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
                                               .displayLarge
                                               .override(
                                                 font: GoogleFonts.outfit(
@@ -202,7 +240,7 @@ class _RechargerCarteWidgetState extends State<RechargerCarteWidget> {
                                                           .displayLarge
                                                           .fontStyle,
                                                 ),
-                                                color: Color(0xFFD4C5F9),
+                                                color: Color(0xFF6C3DE0),
                                                 fontSize: 56.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -211,425 +249,408 @@ class _RechargerCarteWidgetState extends State<RechargerCarteWidget> {
                                                         .displayLarge
                                                         .fontStyle,
                                               ),
-                                          enabledBorder: InputBorder.none,
-                                          focusedBorder: InputBorder.none,
-                                          errorBorder: InputBorder.none,
-                                          focusedErrorBorder: InputBorder.none,
+                                          textAlign: TextAlign.center,
+                                          keyboardType: TextInputType.number,
+                                          cursorColor: Color(0xFF6C3DE0),
+                                          validator: _model
+                                              .textControllerValidator
+                                              .asValidator(context),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .displayLarge
-                                            .override(
-                                              font: GoogleFonts.outfit(
-                                                fontWeight: FontWeight.bold,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .displayLarge
-                                                        .fontStyle,
-                                              ),
-                                              color: Color(0xFF6C3DE0),
-                                              fontSize: 56.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.bold,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .displayLarge
-                                                      .fontStyle,
-                                            ),
-                                        textAlign: TextAlign.center,
-                                        keyboardType: TextInputType.number,
-                                        cursorColor: Color(0xFF6C3DE0),
-                                        validator: _model
-                                            .textControllerValidator
-                                            .asValidator(context),
                                       ),
                                     ),
-                                  ),
-                                  Text(
-                                    'TND',
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleLarge
-                                        .override(
-                                          font: GoogleFonts.inter(
+                                    Text(
+                                      'TND',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLarge
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFF9E7FE8),
+                                            fontSize: 22.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleLarge
                                                     .fontStyle,
                                           ),
-                                          color: Color(0xFF9E7FE8),
-                                          fontSize: 22.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleLarge
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ].divide(SizedBox(width: 8.0)),
-                              ),
-                            ],
+                                    ),
+                                  ].divide(SizedBox(width: 8.0)),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ].divide(SizedBox(height: 8.0)),
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: 44.0,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFF0EAFF),
-                              borderRadius: BorderRadius.circular(22.0),
-                              border: Border.all(
-                                color: Color(0xFFD4C5F9),
-                                width: 1.0,
+                    ].divide(SizedBox(height: 8.0)),
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 30.0, 20.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 44.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF0EAFF),
+                                borderRadius: BorderRadius.circular(22.0),
+                                border: Border.all(
+                                  color: Color(0xFFD4C5F9),
+                                  width: 1.0,
+                                ),
                               ),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 0.0, 20.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '+100 TND',
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLarge
-                                                    .fontStyle,
-                                          ),
-                                          color: Color(0xFF6C3DE0),
-                                          fontSize: 14.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 44.0,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFF0EAFF),
-                              borderRadius: BorderRadius.circular(22.0),
-                              border: Border.all(
-                                color: Color(0xFFD4C5F9),
-                                width: 1.0,
-                              ),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 0.0, 20.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '+200 TND',
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLarge
-                                                    .fontStyle,
-                                          ),
-                                          color: Color(0xFF6C3DE0),
-                                          fontSize: 14.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelLarge
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ].divide(SizedBox(width: 12.0)),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                      child: Container(
-                        width: double.infinity,
-                        height: 120.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF7F3FF),
-                          borderRadius: BorderRadius.circular(20.0),
-                          border: Border.all(
-                            color: Color(0xFFE8DEFF),
-                            width: 1.0,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        width: 32.0,
-                                        height: 32.0,
-                                        decoration: BoxDecoration(
-                                          color: Color(0xFFE8DEFF),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        child: Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
-                                          child: Icon(
-                                            Icons.credit_card_rounded,
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 20.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      '+100 TND',
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
                                             color: Color(0xFF6C3DE0),
-                                            size: 16.0,
+                                            fontSize: 14.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 44.0,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF0EAFF),
+                                borderRadius: BorderRadius.circular(22.0),
+                                border: Border.all(
+                                  color: Color(0xFFD4C5F9),
+                                  width: 1.0,
+                                ),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 20.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      '+200 TND',
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFF6C3DE0),
+                                            fontSize: 14.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ].divide(SizedBox(width: 12.0)),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 10.0, 20.0, 0.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 120.0,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFF7F3FF),
+                            borderRadius: BorderRadius.circular(20.0),
+                            border: Border.all(
+                              color: Color(0xFFE8DEFF),
+                              width: 1.0,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(16.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Container(
+                                          width: 32.0,
+                                          height: 32.0,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFFE8DEFF),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          child: Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Icon(
+                                              Icons.credit_card_rounded,
+                                              color: Color(0xFF6C3DE0),
+                                              size: 16.0,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Text(
-                                        valueOrDefault<String>(
-                                          widget.cardToTopUp?.cardNetwork,
-                                          'VISA',
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.inter(
+                                        Text(
+                                          valueOrDefault<String>(
+                                            widget.cardToTopUp?.cardNetwork,
+                                            'VISA',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                font: GoogleFonts.inter(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                                color: Color(0xFF1A1A2E),
+                                                fontSize: 14.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .fontStyle,
                                               ),
-                                              color: Color(0xFF1A1A2E),
-                                              fontSize: 14.0,
-                                              letterSpacing: 0.0,
+                                        ),
+                                      ].divide(SizedBox(width: 8.0)),
+                                    ),
+                                    Text(
+                                      valueOrDefault<String>(
+                                        widget.cardToTopUp?.cardNumber,
+                                        '**** **** **** 4567',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.normal,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmall
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFF9E9EB8),
+                                            fontSize: 13.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmall
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                                Divider(
+                                  thickness: 1.0,
+                                  color: Color(0xFFE8DEFF),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Frais de rechargement',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.normal,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmall
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFF9E9EB8),
+                                            fontSize: 13.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmall
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                    Text(
+                                      'Gratuit',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .override(
+                                            font: GoogleFonts.inter(
                                               fontWeight: FontWeight.w600,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
+                                                      .bodySmall
                                                       .fontStyle,
                                             ),
-                                      ),
-                                    ].divide(SizedBox(width: 8.0)),
-                                  ),
-                                  Text(
-                                    valueOrDefault<String>(
-                                      widget.cardToTopUp?.cardNumber,
-                                      '**** **** **** 4567',
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight: FontWeight.normal,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontStyle,
-                                          ),
-                                          color: Color(0xFF9E9EB8),
-                                          fontSize: 13.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                              Divider(
-                                thickness: 1.0,
-                                color: Color(0xFFE8DEFF),
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Frais de rechargement',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .override(
-                                          font: GoogleFonts.inter(
-                                            fontWeight: FontWeight.normal,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .fontStyle,
-                                          ),
-                                          color: Color(0xFF9E9EB8),
-                                          fontSize: 13.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                  Text(
-                                    'Gratuit',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .override(
-                                          font: GoogleFonts.inter(
+                                            color: Colors.green,
+                                            fontSize: 13.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmall
                                                     .fontStyle,
                                           ),
-                                          color: Colors.green,
-                                          fontSize: 13.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmall
-                                                  .fontStyle,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ].divide(SizedBox(height: 10.0)),
+                                    ),
+                                  ],
+                                ),
+                              ].divide(SizedBox(height: 10.0)),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ].divide(SizedBox(height: 20.0)),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 58.0,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 20.0,
-                        color: Color(0x806C3DE0),
-                        offset: Offset(
-                          0.0,
-                          8.0,
-                        ),
-                      )
-                    ],
-                    gradient: LinearGradient(
-                      colors: [
-                        Color(0xFF8B5CF6),
-                        Color(0xFF6C3DE0),
-                        Color(0xFF5B21B6)
-                      ],
-                      stops: [0.0, 0.5, 1.0],
-                      begin: AlignmentDirectional(1.0, -1.0),
-                      end: AlignmentDirectional(-1.0, 1.0),
-                    ),
-                    borderRadius: BorderRadius.circular(29.0),
+                    ].divide(SizedBox(height: 20.0)),
                   ),
-                  child: FFButtonWidget(
-                    onPressed: () async {
-                      await widget.cardToTopUp!.reference.update({
-                        ...mapToFirestore(
-                          {
-                            'balance': FieldValue.increment(
-                                double.parse(_model.textController.text)),
-                          },
-                        ),
-                      });
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            'Carte rechargée avec succès !',
-                            style: TextStyle(
-                              color: FlutterFlowTheme.of(context).primaryText,
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                    child: Container(
+                      width: double.infinity,
+                      height: 58.0,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 20.0,
+                            color: Color(0x806C3DE0),
+                            offset: Offset(
+                              0.0,
+                              8.0,
                             ),
-                          ),
-                          duration: Duration(milliseconds: 4000),
-                          backgroundColor:
-                              FlutterFlowTheme.of(context).secondary,
+                          )
+                        ],
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF8B5CF6),
+                            Color(0xFF6C3DE0),
+                            Color(0xFF5B21B6)
+                          ],
+                          stops: [0.0, 0.5, 1.0],
+                          begin: AlignmentDirectional(1.0, -1.0),
+                          end: AlignmentDirectional(-1.0, 1.0),
                         ),
-                      );
-
-                      context.pushNamed(
-                          TheMainMesCartesDashboardViewCardsTransactionsWidget
-                              .routeName);
-                    },
-                    text: 'Confirmer le rechargement',
-                    icon: Icon(
-                      Icons.bolt_rounded,
-                      size: 15.0,
-                    ),
-                    options: FFButtonOptions(
-                      height: 40.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).transparent,
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                font: GoogleFonts.plusJakartaSans(
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
+                        borderRadius: BorderRadius.circular(29.0),
+                      ),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          await widget.cardToTopUp!.reference.update({
+                            ...mapToFirestore(
+                              {
+                                'balance': FieldValue.increment(
+                                    double.parse(_model.textController.text)),
+                              },
+                            ),
+                          });
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Carte rechargée avec succès !',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                 ),
-                                color: Colors.white,
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .fontStyle,
                               ),
-                      elevation: 0.0,
-                      borderRadius: BorderRadius.circular(8.0),
+                              duration: Duration(milliseconds: 4000),
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).secondary,
+                            ),
+                          );
+
+                          context.pushNamed(
+                              TheMainMesCartesDashboardViewCardsTransactionsWidget
+                                  .routeName);
+                        },
+                        text: 'Confirmer le rechargement',
+                        icon: Icon(
+                          Icons.bolt_rounded,
+                          size: 15.0,
+                        ),
+                        options: FFButtonOptions(
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).transparent,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    font: GoogleFonts.plusJakartaSans(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
+                                  ),
+                          elevation: 0.0,
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ]
-                  .addToStart(SizedBox(height: 32.0))
-                  .addToEnd(SizedBox(height: 40.0)),
+                ]
+                    .addToStart(SizedBox(height: 32.0))
+                    .addToEnd(SizedBox(height: 40.0)),
+              ),
             ),
           ),
         ),
