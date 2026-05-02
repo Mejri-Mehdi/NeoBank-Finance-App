@@ -204,12 +204,15 @@ class _AnalytiquesTransactionsWidgetState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 6.0, 0.0, 0.0),
                               child: Text(
-                                formatNumber(
-                                  functions.getTotalSpent(
-                                      analytiquesTransactionsTransactionsRecordList
-                                          .toList()),
-                                  formatType: FormatType.decimal,
-                                  currency: 'TND',
+                                valueOrDefault<String>(
+                                  formatNumber(
+                                    functions.getTotalSpent(
+                                        analytiquesTransactionsTransactionsRecordList
+                                            .toList()),
+                                    formatType: FormatType.decimal,
+                                    currency: 'TND',
+                                  ),
+                                  '0.0',
                                 ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
@@ -953,12 +956,15 @@ class _AnalytiquesTransactionsWidgetState
                                                       CrossAxisAlignment.end,
                                                   children: [
                                                     Text(
-                                                      functions
-                                                          .getCategoryTotal(
-                                                              analytiquesTransactionsTransactionsRecordList
-                                                                  .toList(),
-                                                              'categoryItem')
-                                                          .toString(),
+                                                      valueOrDefault<String>(
+                                                        functions
+                                                            .getCategoryTotal(
+                                                                analytiquesTransactionsTransactionsRecordList
+                                                                    .toList(),
+                                                                'categoryItem')
+                                                            .toString(),
+                                                        '0.0',
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyLarge
