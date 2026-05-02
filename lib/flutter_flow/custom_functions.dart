@@ -69,13 +69,13 @@ String? generateExpiryDate() {
   return "$monthStr/$yearStr";
 }
 
-List<double>? getChartTotals(List<TransactionsRecord>? txList) {
-  // Return a dummy value of 1.0 so the chart draws a clean circle
-  if (txList == null || txList.isEmpty) return [1.0];
+List<double> getChartTotals(List<TransactionsRecord>? txList) {
+  // Sums up the amounts spent per category in exact matching order
+  if (txList == null || txList.isEmpty) return [];
 
   final debits = txList.where((tx) => tx.type == 'debit').toList();
-  if (debits.isEmpty) return [1.0];
   Map<String, double> totals = {};
+
   for (var tx in debits) {
     String cat = (tx.category != null && tx.category!.isNotEmpty)
         ? tx.category!
@@ -84,6 +84,7 @@ List<double>? getChartTotals(List<TransactionsRecord>? txList) {
     totals[cat] = (totals[cat] ?? 0.0) + amount;
   }
 
+  // Ensure order exactly matches the getChartCategories function
   Set<String> categories = {};
   for (var tx in debits) {
     String cat = (tx.category != null && tx.category!.isNotEmpty)
@@ -96,24 +97,24 @@ List<double>? getChartTotals(List<TransactionsRecord>? txList) {
   for (String cat in categories) {
     result.add(totals[cat]!);
   }
+
   return result;
 }
 
-List<String>? getChartCategories(List<TransactionsRecord>? txList) {
-  // Safe check for null or empty
-  if (txList == null || txList.isEmpty) return ["Aucune dépense"];
+List<String> getChartCategories(List<TransactionsRecord>? txList) {
+  // Returns unique categories for all debit transactions
+  if (txList == null || txList.isEmpty) return [];
 
   final debits = txList.where((tx) => tx.type == 'debit').toList();
-
-  // If they have transactions, but NO spending yet
-  if (debits.isEmpty) return ["Aucune dépense"];
   Set<String> categories = {};
+
   for (var tx in debits) {
     String cat = (tx.category != null && tx.category!.isNotEmpty)
         ? tx.category!
         : 'Autre';
     categories.add(cat);
   }
+
   return categories.toList();
 }
 
@@ -130,7 +131,7 @@ double getTotalSpent(List<TransactionsRecord>? txList) {
 
 double getCategoryTotal(
   List<TransactionsRecord>? txList,
-  String? categoryName,
+  String categoryName,
 ) {
   if (txList == null || txList.isEmpty) return 0.0;
   double total = 0.0;

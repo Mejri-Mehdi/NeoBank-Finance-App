@@ -429,7 +429,7 @@ class _AnalytiquesTransactionsWidgetState
                                                         .getChartCategories(
                                                             analytiquesTransactionsTransactionsRecordList
                                                                 .toList())
-                                                        ?.length
+                                                        .length
                                                         .toDouble(),
                                                     0.0,
                                                   ),
@@ -438,7 +438,7 @@ class _AnalytiquesTransactionsWidgetState
                                                         .getChartTotals(
                                                             analytiquesTransactionsTransactionsRecordList
                                                                 .toList())
-                                                        ?.length
+                                                        .length
                                                         .toDouble(),
                                                     0.0,
                                                   )),
@@ -800,11 +800,10 @@ class _AnalytiquesTransactionsWidgetState
                               Builder(
                                 builder: (context) {
                                   final categoryItem = functions
-                                          .getChartCategories(
-                                              analytiquesTransactionsTransactionsRecordList
-                                                  .toList())
-                                          ?.toList() ??
-                                      [];
+                                      .getChartCategories(
+                                          analytiquesTransactionsTransactionsRecordList
+                                              .toList())
+                                      .toList();
 
                                   return ListView.builder(
                                     padding: EdgeInsets.zero,
