@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'analytiques_transactions_widget.dart'
     show AnalytiquesTransactionsWidget;
 import 'package:flutter/material.dart';

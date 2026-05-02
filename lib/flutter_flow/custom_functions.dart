@@ -70,12 +70,14 @@ String? generateExpiryDate() {
 }
 
 List<double> getChartTotals(List<TransactionsRecord>? txList) {
-  // Sums up the amounts spent per category in exact matching order
-  if (txList == null || txList.isEmpty) return [];
+  if (txList == null || txList.isEmpty) return [1.0];
 
-  final debits = txList.where((tx) => tx.type == 'debit').toList();
+  // MAGIC FIX
+  final debits = txList
+      .where((tx) => tx.type != null && tx.type!.contains('bit'))
+      .toList();
+  if (debits.isEmpty) return [1.0];
   Map<String, double> totals = {};
-
   for (var tx in debits) {
     String cat = (tx.category != null && tx.category!.isNotEmpty)
         ? tx.category!
@@ -84,7 +86,6 @@ List<double> getChartTotals(List<TransactionsRecord>? txList) {
     totals[cat] = (totals[cat] ?? 0.0) + amount;
   }
 
-  // Ensure order exactly matches the getChartCategories function
   Set<String> categories = {};
   for (var tx in debits) {
     String cat = (tx.category != null && tx.category!.isNotEmpty)
@@ -97,46 +98,47 @@ List<double> getChartTotals(List<TransactionsRecord>? txList) {
   for (String cat in categories) {
     result.add(totals[cat]!);
   }
-
   return result;
 }
 
 List<String> getChartCategories(List<TransactionsRecord>? txList) {
-  // Returns unique categories for all debit transactions
-  if (txList == null || txList.isEmpty) return [];
+  if (txList == null || txList.isEmpty) return ["Aucune dépense"];
 
-  final debits = txList.where((tx) => tx.type == 'debit').toList();
+  // MAGIC FIX: Filters for your exact database strings
+  final debits = txList
+      .where((tx) => tx.type != null && tx.type!.contains('bit'))
+      .toList();
+  if (debits.isEmpty) return ["Aucune dépense"];
   Set<String> categories = {};
-
   for (var tx in debits) {
     String cat = (tx.category != null && tx.category!.isNotEmpty)
         ? tx.category!
         : 'Autre';
     categories.add(cat);
   }
-
   return categories.toList();
 }
 
-double getTotalSpent(List<TransactionsRecord>? txList) {
-  if (txList == null || txList.isEmpty) return 0.0;
+String getTotalSpent(List<TransactionsRecord>? txList) {
+  if (txList == null || txList.isEmpty) return "0.00";
   double total = 0.0;
   for (var tx in txList) {
-    if (tx.type == 'debit') {
+    // MAGIC FIX: Now catches "Débit (Achat)"
+    if (tx.type != null && tx.type!.contains('bit')) {
       total += tx.amount ?? 0.0;
     }
   }
-  return total;
+  return total.toStringAsFixed(2);
 }
 
-double getCategoryTotal(
+String getCategoryTotal(
   List<TransactionsRecord>? txList,
   String categoryName,
 ) {
-  if (txList == null || txList.isEmpty) return 0.0;
+  if (txList == null || txList.isEmpty) return "0.00";
   double total = 0.0;
   for (var tx in txList) {
-    if (tx.type == 'debit') {
+    if (tx.type != null && tx.type!.contains('bit')) {
       String cat = (tx.category != null && tx.category!.isNotEmpty)
           ? tx.category!
           : 'Autre';
@@ -145,5 +147,26 @@ double getCategoryTotal(
       }
     }
   }
-  return total;
+  return total.toStringAsFixed(2);
+}
+
+String getCategoryCount(
+  List<TransactionsRecord>? txList,
+  String categoryName,
+) {
+  if (txList == null || txList.isEmpty) return "0 transaction";
+  int count = 0;
+
+  for (var tx in txList) {
+    if (tx.type != null && tx.type!.contains('bit')) {
+      String cat = (tx.category != null && tx.category!.isNotEmpty)
+          ? tx.category!
+          : 'Autre';
+      if (cat == categoryName) {
+        count++;
+      }
+    }
+  }
+  // Automatically adds an 's' if there is more than 1!
+  return "$count transaction${count > 1 ? 's' : ''}";
 }
