@@ -105,6 +105,14 @@ abstract class FlutterFlowTheme {
   late Color customColor6;
   late Color customColor7;
   late Color customColor8;
+  late Color customColor9;
+  late Color customColor10;
+  late Color customColor11;
+  late Color customColor12;
+  late Color customColor13;
+  late Color customColor14;
+  late Color customColor15;
+  late Color customColor16;
 
   FFDesignTokens get designToken => FFDesignTokens(this);
 
@@ -260,6 +268,14 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color customColor6 = const Color(0xFF24E03B);
   late Color customColor7 = const Color(0xFFF7BBA2);
   late Color customColor8 = const Color(0xFF7F5E11);
+  late Color customColor9 = const Color(0xFFC58EFD);
+  late Color customColor10 = const Color(0xFF87A2B6);
+  late Color customColor11 = const Color(0xFFBE2D66);
+  late Color customColor12 = const Color(0xFF2C5095);
+  late Color customColor13 = const Color(0xFF61AC68);
+  late Color customColor14 = const Color(0xFF08BE06);
+  late Color customColor15 = const Color(0xFFE75615);
+  late Color customColor16 = const Color(0xFF0A2E64);
 }
 
 abstract class Typography {
@@ -495,6 +511,14 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color customColor6 = const Color(0xFF24E03B);
   late Color customColor7 = const Color(0xFFF7BBA2);
   late Color customColor8 = const Color(0xFF7F5E11);
+  late Color customColor9 = const Color(0xFFC58EFD);
+  late Color customColor10 = const Color(0xFF87A2B6);
+  late Color customColor11 = const Color(0xFFBE2D66);
+  late Color customColor12 = const Color(0xFF2C5095);
+  late Color customColor13 = const Color(0xFF61AC68);
+  late Color customColor14 = const Color(0xFF08BE06);
+  late Color customColor15 = const Color(0xFFE75615);
+  late Color customColor16 = const Color(0xFF0A2E64);
 }
 
 class FFDesignTokens {
