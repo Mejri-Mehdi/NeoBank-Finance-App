@@ -1000,7 +1000,7 @@ class _EditWalletWidgetState extends State<EditWalletWidget> {
                                           shape: BoxShape.rectangle,
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondary,
+                                                .primary,
                                             width: 1.0,
                                           ),
                                         ),
@@ -1018,7 +1018,7 @@ class _EditWalletWidgetState extends State<EditWalletWidget> {
                                                   Icons.savings_rounded,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondary,
+                                                      .primary,
                                                   size: 22.0,
                                                 ),
                                                 Expanded(
@@ -1139,7 +1139,7 @@ class _EditWalletWidgetState extends State<EditWalletWidget> {
                                                                                     fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                     fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                   ),
-                                                                                  color: FlutterFlowTheme.of(context).accent3,
+                                                                                  color: FlutterFlowTheme.of(context).alternate,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
