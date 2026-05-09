@@ -548,29 +548,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['investissements'],
             ),
           ),
-        ),
-        FFRoute(
-          name: PremiumVRificationPageWidget.routeName,
-          path: PremiumVRificationPageWidget.routePath,
-          builder: (context, params) => PremiumVRificationPageWidget(
-            phoneNumber: params.getParam(
-              'phoneNumber',
-              ParamType.String,
-            ),
-            userEmail: params.getParam(
-              'userEmail',
-              ParamType.String,
-            ),
-            userPassword: params.getParam(
-              'userPassword',
-              ParamType.String,
-            ),
-          ),
-        ),
-        FFRoute(
-          name: LoadingSMSPageWidget.routeName,
-          path: LoadingSMSPageWidget.routePath,
-          builder: (context, params) => LoadingSMSPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

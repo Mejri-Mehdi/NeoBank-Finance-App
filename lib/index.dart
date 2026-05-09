@@ -78,7 +78,3 @@ export '/gestion_invest/smart_recommendation_page/smart_recommendation_page_widg
     show SmartRecommendationPageWidget;
 export '/gestion_invest/invdetails/invdetails_widget.dart'
     show InvdetailsWidget;
-export '/premium_v_rification_page/premium_v_rification_page_widget.dart'
-    show PremiumVRificationPageWidget;
-export '/loading_s_m_s_page/loading_s_m_s_page_widget.dart'
-    show LoadingSMSPageWidget;

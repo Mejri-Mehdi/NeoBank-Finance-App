@@ -55,11 +55,6 @@ class UsersRecord extends FirestoreRecord {
   String get cinImageUrl => _cinImageUrl ?? '';
   bool hasCinImageUrl() => _cinImageUrl != null;
 
-  // "two_fa_enabled" field.
-  bool? _twoFaEnabled;
-  bool get twoFaEnabled => _twoFaEnabled ?? false;
-  bool hasTwoFaEnabled() => _twoFaEnabled != null;
-
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -69,7 +64,6 @@ class UsersRecord extends FirestoreRecord {
     _photoUrl = snapshotData['photo_url'] as String?;
     _kycStatus = snapshotData['kyc_status'] as String?;
     _cinImageUrl = snapshotData['cin_image_url'] as String?;
-    _twoFaEnabled = snapshotData['two_fa_enabled'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -114,7 +108,6 @@ Map<String, dynamic> createUsersRecordData({
   String? photoUrl,
   String? kycStatus,
   String? cinImageUrl,
-  bool? twoFaEnabled,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -126,7 +119,6 @@ Map<String, dynamic> createUsersRecordData({
       'photo_url': photoUrl,
       'kyc_status': kycStatus,
       'cin_image_url': cinImageUrl,
-      'two_fa_enabled': twoFaEnabled,
     }.withoutNulls,
   );
 
@@ -145,8 +137,7 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.phoneNumber == e2?.phoneNumber &&
         e1?.photoUrl == e2?.photoUrl &&
         e1?.kycStatus == e2?.kycStatus &&
-        e1?.cinImageUrl == e2?.cinImageUrl &&
-        e1?.twoFaEnabled == e2?.twoFaEnabled;
+        e1?.cinImageUrl == e2?.cinImageUrl;
   }
 
   @override
@@ -158,8 +149,7 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.phoneNumber,
         e?.photoUrl,
         e?.kycStatus,
-        e?.cinImageUrl,
-        e?.twoFaEnabled
+        e?.cinImageUrl
       ]);
 
   @override
