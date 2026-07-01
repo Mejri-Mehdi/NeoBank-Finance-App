@@ -1,9 +1,11 @@
-# Ignore everything
+# Ignore everything by default
 *
 
-# Except these paths
+# Allow these paths only
 !README.md
 !Screenshots/
 !Screenshots/**
 !project_documentation.md
+!lib/
+!lib/**
 !.gitignore
