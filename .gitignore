@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+# Except these paths
+!README.md
+!Screenshots/
+!Screenshots/**
+!project_documentation.md
+!.gitignore
