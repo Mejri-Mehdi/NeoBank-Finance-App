@@ -357,9 +357,9 @@ erDiagram
 
 > Sets spending caps per category and provides AI-driven financial coaching using LLMs.
 
-| Budget List |
-| :---: |
-| ![Budget](Screenshots/009c2ea3-9019-47ce-84c6-50eefee7a430.jpg) |
+<p align="center">
+  <img src="Screenshots/009c2ea3-9019-47ce-84c6-50eefee7a430.jpg" width="300" alt="Budget List Screen"/>
+</p>
 
 **Advanced Business Logic:**
 - **Llama 3.3 70B Budget Advisor** (`GeminiAnalyseCall`): Sends budget category, target, days remaining, and current spend to Groq. Returns a structured French-language JSON with alerts, savings actions, and recommendations tailored to Tunisian spending (TND).
