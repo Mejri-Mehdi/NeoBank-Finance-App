@@ -5,6 +5,7 @@
 **A showcase-only Flutter project built with FlutterFlow & Firebase, tailored for the Tunisian market (TND).**
 
 > ⚠️ **SOURCE CODE IS NOT AVAILABLE** — This repository is a **portfolio showcase** of the application's architecture, design, and advanced business logic. The full source code is intentionally withheld. All screenshots and documentation are provided for demonstration purposes only.
+
 > 🔐 **For Hiring Managers & Recruiters:** If you are interested in evaluating the implementation in more detail, I would be happy to share the full source code privately upon request.
 
 ![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white)
